@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise and Healthy Kitchen - Non-Toxic, BPA-Free Kitchen Appliances</title>
+    <meta name="description" content="Expert reviews of stainless steel, glass, and BPA-free kitchen appliances. Safe, non-toxic air fryers, cookware, and kitchen equipment for health-conscious families.">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-heart-pulse text-success me-2"></i>
+                <span class="brand-text">Wise & Healthy Kitchen</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Safe Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="products.html#air-fryers">Stainless Steel Air Fryers</a></li>
+                            <li><a class="dropdown-item" href="products.html#cookware">Non-Toxic Cookware</a></li>
+                            <li><a class="dropdown-item" href="products.html#appliances">BPA-Free Appliances</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Health Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#our-mission">Our Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-bg" style="background: linear-gradient(135deg, rgba(138, 154, 123, 0.9) 0%, rgba(107, 124, 89, 0.9) 100%), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%238a9a7b%22 width=%221200%22 height=%22800%22/><g fill=%22%23ffffff%22 opacity=%220.05%22><circle cx=%22400%22 cy=%22400%22 r=%22200%22/><circle cx=%22800%22 cy=%22300%22 r=%22150%22/><circle cx=%22300%22 cy=%22600%22 r=%22180%22/></g></svg>'); background-size: cover; background-position: center;"></div>
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-center">
+                                    <span class="badge bg-light text-dark mb-3 px-3 py-2">Non-Toxic • BPA-Free • PFAS-Free</span>
+                                    <h1 class="display-3 fw-bold mb-4 animate-slide-up">Cook Healthy, Live Healthier</h1>
+                                    <p class="lead mb-5 animate-slide-up" style="animation-delay: 0.2s;">Expert reviews of stainless steel, glass, and ceramic kitchen appliances that protect your family's health</p>
+                                    <div class="animate-slide-up" style="animation-delay: 0.4s;">
+                                        <a href="products.html" class="btn btn-success btn-lg px-5 me-3">
+                                            Browse Safe Products <i class="bi bi-arrow-right ms-2"></i>
+                                        </a>
+                                        <a href="#our-mission" class="btn btn-outline-light btn-lg px-5">
+                                            Our Mission
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2: Our Motto -->
+                <div class="carousel-item">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-bg" style="background: linear-gradient(135deg, rgba(74, 89, 67, 0.9) 0%, rgba(107, 124, 89, 0.9) 100%), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%234a5943%22 width=%221200%22 height=%22800%22/><g fill=%22%23ffffff%22 opacity=%220.08%22><path d=%22M0,400 Q300,200 600,400 T1200,400 L1200,800 L0,800 Z%22/></g></svg>'); background-size: cover; background-position: center;"></div>
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-center">
+                                    <i class="bi bi-heart-pulse display-1 mb-4" style="color: rgba(255,255,255,0.9);"></i>
+                                    <h1 class="display-3 fw-bold mb-4">We Are With You</h1>
+                                    <p class="display-6 mb-5" style="font-family: var(--font-serif); font-style: italic; font-weight: 300;">To genuinely help you make healthier kitchen choices</p>
+                                    <a href="#our-mission" class="btn btn-light btn-lg px-5">
+                                        Learn About Our Mission <i class="bi bi-arrow-down ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-bg" style="background: linear-gradient(135deg, rgba(169, 145, 108, 0.85) 0%, rgba(138, 154, 123, 0.85) 100%), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%23a9916c%22 width=%221200%22 height=%22800%22/><g fill=%22%23ffffff%22 opacity=%220.1%22><rect x=%22100%22 y=%22100%22 width=%22200%22 height=%22600%22/><rect x=%22400%22 y=%22200%22 width=%22400%22 height=%22400%22/><rect x=%22900%22 y=%22150%22 width=%22200%22 height=%22500%22/></g></svg>'); background-size: cover; background-position: center;"></div>
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-center">
+                                    <h1 class="display-3 fw-bold mb-4">No Plastic. No Teflon. No Compromises.</h1>
+                                    <p class="lead mb-5">Discover premium stainless steel air fryers that deliver crispy results without toxic chemicals</p>
+                                    <a href="products.html#air-fryers" class="btn btn-light btn-lg px-5">
+                                        See Safest Air Fryers <i class="bi bi-shield-check ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-section py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3 col-6">
+                    <i class="bi bi-shield-fill-check text-success fs-2"></i>
+                    <p class="mb-0 mt-2 fw-semibold">BPA-Free Certified</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <i class="bi bi-x-circle text-danger fs-2"></i>
+                    <p class="mb-0 mt-2 fw-semibold">No PFAS/Teflon</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <i class="bi bi-award text-warning fs-2"></i>
+                    <p class="mb-0 mt-2 fw-semibold">Premium Materials</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <i class="bi bi-people text-info fs-2"></i>
+                    <p class="mb-0 mt-2 fw-semibold">Family Safe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amazon Associates Disclosure -->
+    <section class="py-3 bg-light border-top border-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-0 small text-center text-muted">
+                        <i class="bi bi-info-circle me-1"></i>
+                        <strong>Amazon Associates Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. This means if you click on an Amazon link from this website and make a purchase, we may receive a small commission at no extra cost to you. This helps us maintain our website and continue providing helpful content. We only recommend products we've thoroughly researched and believe are genuinely safer for your family.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Non-Toxic Section -->
+    <section class="why-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="info-box">
+                        <span class="badge bg-danger mb-3">Health Alert</span>
+                        <h2 class="display-5 fw-bold mb-4">Why We Only Recommend Safe Materials</h2>
+                        <p class="lead text-muted mb-4">Most budget kitchen appliances contain plastics and coatings that release harmful chemicals when heated.</p>
+                        
+                        <div class="feature-item mb-3">
+                            <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                            <strong>BPA & Phthalates:</strong> Hormone disruptors found in plastics
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                            <strong>PFAS (Teflon):</strong> "Forever chemicals" linked to health issues
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                            <strong>Microplastics:</strong> Released from heated plastic components
+                        </div>
+                        
+                        <p class="mt-4">We test and recommend only <strong>stainless steel, glass, and ceramic</strong> appliances that keep your family safe.</p>
+                        
+                        <a href="blog.html#safety-guide" class="btn btn-outline-success mt-3">
+                            Learn More About Safe Materials <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="bi bi-graph-down-arrow text-danger fs-1 mb-3"></i>
+                            <h3 class="fw-bold">0%</h3>
+                            <p class="text-muted mb-0">Plastic in Our Top Picks</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="bi bi-check2-circle text-success fs-1 mb-3"></i>
+                            <h3 class="fw-bold">100%</h3>
+                            <p class="text-muted mb-0">BPA-Free Certified</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="bi bi-shield-check text-info fs-1 mb-3"></i>
+                            <h3 class="fw-bold">Premium</h3>
+                            <p class="text-muted mb-0">Materials Only</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="bi bi-heart-pulse text-danger fs-1 mb-3"></i>
+                            <h3 class="fw-bold">Health</h3>
+                            <p class="text-muted mb-0">First Always</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Safe Products -->
+    <section class="featured-products py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title display-5 fw-bold mb-3">Safest Kitchen Appliances</h2>
+                <p class="text-muted lead">Premium stainless steel and glass appliances tested for your health</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Product 1: Breville Smart Oven -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card h-100 shadow">
+                        <div class="product-badge">
+                            <span class="badge bg-success">Editor's Choice</span>
+                        </div>
+                        <div class="safety-badge">
+                            <span class="badge bg-info"><i class="bi bi-shield-check"></i> 100% Stainless Steel</span>
+                        </div>
+                        <div class="card-img-container">
+                            <div class="product-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <i class="bi bi-award fs-1 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2">
+                                <span class="badge bg-success-subtle text-success">Premium</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Breville Smart Oven Air Fryer Pro</h5>
+                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 8,500+ sold</span></div>
+                            <p class="card-text text-muted flex-grow-1">100% stainless steel construction. Zero plastic contact with food. Convection oven + air fryer with 13 cooking functions.</p>
+                            
+                            <div class="safety-features mb-3">
+                                <h6 class="text-success mb-2"><i class="bi bi-shield-check me-1"></i> Safety Features</h6>
+                                <ul class="small text-muted mb-0">
+                                    <li>All stainless steel interior & exterior</li>
+                                    <li>No Teflon or non-stick coatings</li>
+                                    <li>BPA-free, PFOA-free, PFAS-free</li>
+                                    <li>Tempered glass door</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-success mb-0">$399.95</span>
+                                </div>
+                                <a href="products.html#breville-smart-oven" class="btn btn-success">
+                                    Read Review <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Instant Pot Stainless -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card h-100 shadow">
+                        <div class="product-badge">
+                            <span class="badge bg-primary">Best Value</span>
+                        </div>
+                        <div class="safety-badge">
+                            <span class="badge bg-info"><i class="bi bi-shield-check"></i> Stainless Interior</span>
+                        </div>
+                        <div class="card-img-container">
+                            <div class="product-image-placeholder" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                                <i class="bi bi-award fs-1 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2">
+                                <span class="badge bg-primary-subtle text-primary">Multi-Cooker</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Instant Pot Duo Plus (Stainless)</h5>
+                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 8,500+ sold</span></div>
+                            <p class="card-text text-muted flex-grow-1">Stainless steel cooking pot. 9-in-1 functionality. Safer alternative to plastic slow cookers and rice makers.</p>
+                            
+                            <div class="safety-features mb-3">
+                                <h6 class="text-success mb-2"><i class="bi bi-shield-check me-1"></i> Safety Features</h6>
+                                <ul class="small text-muted mb-0">
+                                    <li>Food-grade stainless steel pot</li>
+                                    <li>BPA-free sealing ring</li>
+                                    <li>No chemical coatings</li>
+                                    <li>ETL & UL certified safe</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-success mb-0">$129.95</span>
+                                    <small class="text-muted text-decoration-line-through ms-2">$149.99</small>
+                                </div>
+                                <a href="products.html#instant-pot" class="btn btn-success">
+                                    Read Review <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Cuisinart Stainless -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card h-100 shadow">
+                        <div class="product-badge">
+                            <span class="badge bg-warning">Compact Option</span>
+                        </div>
+                        <div class="safety-badge">
+                            <span class="badge bg-info"><i class="bi bi-shield-check"></i> Metal Construction</span>
+                        </div>
+                        <div class="card-img-container">
+                            <div class="product-image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                <i class="bi bi-award fs-1 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2">
+                                <span class="badge bg-warning-subtle text-warning">Air Fryer Oven</span>
+                            </div>
+                            <h5 class="card-title fw-bold">Cuisinart TOA-65 Air Fryer</h5>
+                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 8,500+ sold</span></div>
+                            <p class="card-text text-muted flex-grow-1">Stainless steel toaster oven with air fryer function. Durable metal construction. Perfect for small families.</p>
+                            
+                            <div class="safety-features mb-3">
+                                <h6 class="text-success mb-2"><i class="bi bi-shield-check me-1"></i> Safety Features</h6>
+                                <ul class="small text-muted mb-0">
+                                    <li>Brushed stainless steel housing</li>
+                                    <li>Non-stick ceramic coating (PFOA-free)</li>
+                                    <li>No BPA components</li>
+                                    <li>Minimal plastic parts</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-success mb-0">$229.95</span>
+                                </div>
+                                <a href="products.html#cuisinart-toa" class="btn btn-success">
+                                    Read Review <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="products.html" class="btn btn-success btn-lg px-5">
+                    View All Safe Products <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="blog-preview py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title display-5 fw-bold mb-3">Health & Safety Guides</h2>
+                <p class="text-muted lead">Evidence-based articles to help you make informed decisions</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card blog-card h-100 shadow-sm border-0">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="bi bi-shield-fill-check fs-1 text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <span class="badge bg-success-subtle text-success">Safety Guide</span>
+                                <small class="text-muted ms-2">Feb 10, 2026</small>
+                            </div>
+                            <h5 class="card-title fw-bold">The 5 Safest Air Fryers for Health-Conscious Families</h5>
+                            <p class="card-text text-muted">Stainless steel and glass options that eliminate plastic exposure and toxic coatings...</p>
+                            <a href="blog.html#safest-air-fryers" class="btn btn-sm btn-outline-success">
+                                Read Full Guide <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card blog-card h-100 shadow-sm border-0">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                            <i class="bi bi-clipboard-data fs-1 text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <span class="badge bg-primary-subtle text-primary">Comparison</span>
+                                <small class="text-muted ms-2">Feb 9, 2026</small>
+                            </div>
+                            <h5 class="card-title fw-bold">Stainless Steel vs. Plastic Air Fryers: A Health Comparison</h5>
+                            <p class="card-text text-muted">The science behind why material matters and what happens when plastic gets heated...</p>
+                            <a href="blog.html#steel-vs-plastic" class="btn btn-sm btn-outline-success">
+                                Read Comparison <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card blog-card h-100 shadow-sm border-0">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <i class="bi bi-exclamation-triangle fs-1 text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <span class="badge bg-warning-subtle text-warning">Must Read</span>
+                                <small class="text-muted ms-2">Feb 8, 2026</small>
+                            </div>
+                            <h5 class="card-title fw-bold">Are Air Fryers Safe? What You Need to Know About Materials</h5>
+                            <p class="card-text text-muted">Understanding BPA, PFAS, and why most budget air fryers pose health risks...</p>
+                            <a href="blog.html#safety-guide" class="btn btn-sm btn-outline-success">
+                                Learn More <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="blog.html" class="btn btn-outline-success btn-lg">
+                    Read All Articles <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section id="our-mission" class="mission-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <i class="bi bi-heart-pulse text-success fs-1 mb-4"></i>
+                    <h2 class="display-5 fw-bold mb-4">Our Mission: Your Family's Health First</h2>
+                    <p class="lead text-muted mb-4">We started Wise & Healthy Kitchen after discovering that most "affordable" kitchen appliances contain harmful plastics and chemical coatings that leach into food when heated.</p>
+                    <p class="mb-4">We believe everyone deserves access to safe, non-toxic kitchen equipment without compromising on performance or breaking the bank.</p>
+                    
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="mission-card">
+                                <i class="bi bi-search text-success fs-2 mb-3"></i>
+                                <h5 class="fw-bold">Rigorous Testing</h5>
+                                <p class="small text-muted mb-0">We verify materials, certifications, and safety claims</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mission-card">
+                                <i class="bi bi-shield-check text-success fs-2 mb-3"></i>
+                                <h5 class="fw-bold">No Compromises</h5>
+                                <p class="small text-muted mb-0">Only stainless steel, glass, and certified BPA-free products</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mission-card">
+                                <i class="bi bi-book text-success fs-2 mb-3"></i>
+                                <h5 class="fw-bold">Education First</h5>
+                                <p class="small text-muted mb-0">Helping families understand what's really in their kitchens</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5 bg-success text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-6 fw-bold mb-3">Get Our Free Safety Guide</h2>
+                    <p class="lead mb-4">Join 10,000+ health-conscious families. Receive our "Non-Toxic Kitchen Checklist" + weekly safety updates</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-6">
+                            <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-light btn-lg px-4">Get Free Guide</button>
+                        </div>
+                    </form>
+                    <p class="small mt-3 mb-0">No spam. Unsubscribe anytime. We respect your privacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-heart-pulse text-success me-2"></i>Wise & Healthy Kitchen
+                    </h5>
+                    <p class="text-muted">Your trusted source for non-toxic, BPA-free, and PFAS-free kitchen appliances. Because your family's health matters.</p>
+                    <p class="text-muted small mb-3"><em>"We are with you to genuinely help you make healthier kitchen choices"</em></p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-3" aria-label="Follow us on Pinterest"><i class="bi bi-pinterest fs-4"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Follow us on Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Follow us on Instagram"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Share via WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
+                        <a href="/cdn-cgi/l/email-protection#234b464f4f4c63544a50464b46424f574b5a484a57404b464d0d404c4e" class="text-white" aria-label="Email us"><i class="bi bi-envelope fs-4"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-muted text-decoration-none">Safe Products</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted text-decoration-none">Health Blog</a></li>
+                        <li class="mb-2"><a href="#our-mission" class="text-muted text-decoration-none">Our Mission</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3">Safe Products</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="products.html#air-fryers" class="text-muted text-decoration-none">Stainless Steel Air Fryers</a></li>
+                        <li class="mb-2"><a href="products.html#appliances" class="text-muted text-decoration-none">BPA-Free Multi-Cookers</a></li>
+                        <li class="mb-2"><a href="products.html#cookware" class="text-muted text-decoration-none">Non-Toxic Cookware</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-muted text-decoration-none">All Safe Products</a></li>
+                        <li class="mb-2"><a href="blog.html#safety-guide" class="text-muted text-decoration-none">Materials Safety Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6" id="contact">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> <a href="/cdn-cgi/l/email-protection#f9919c959596b98e908a9c919c98958d918092908d9a919c97d79a9694" class="text-muted text-decoration-none"><span class="__cf_email__" data-cfemail="bcd4d9d0d0d3fccbd5cfd9d4d9ddd0c8d4c5d7d5c8dfd4d9d292dfd3d1">[email&#160;protected]</span></a></li>
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> United States</li>
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i> Mon-Fri: 9am-5pm EST</li>
+                    </ul>
+                    <div class="mt-3">
+                        <p class="small text-muted mb-2">📧 Get our free safety guide:</p>
+                        <a href="#" class="btn btn-outline-light btn-sm">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4 bg-secondary">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-2 text-muted small">&copy; 2026 Wise & Healthy Kitchen. All rights reserved.</p>
+                    <p class="mb-0 text-muted small">As an Amazon Associate, we earn from qualifying purchases.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="privacy-policy.html" class="text-muted text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="text-muted text-decoration-none small me-3">Terms of Service</a>
+                    <a href="affiliate-disclosure.html" class="text-muted text-decoration-none small">Affiliate Disclosure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" style="display: none; width: 50px; height: 50px;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
