@@ -55,13 +55,13 @@ a {
 /* ===== Navigation ===== */
 .navbar {
     background-color: var(--soft-white) !important;
-    border-bottom: 1px solid var(--beige);
+    border-bottom: 3px solid var(--beige);
     padding: 1rem 0;
 }
 
 .navbar-brand {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 900;
     color: var(--text-dark) !important;
 }
