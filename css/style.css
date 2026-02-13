@@ -685,3 +685,39 @@ body {
     border-color: var(--primary-green);
 }
 
+.footer {
+    background-color: #476225 !important;
+    color: white !important;
+}
+
+/* This ensures the links inside the footer are also readable */
+.footer a, 
+.footer .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer a:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+/* Adjusting the horizontal rule for better visibility */
+.footer hr {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Footer Button Hover Effect */
+.footer .btn-outline-light {
+    transition: all 0.3s ease;
+    border-width: 2px;
+    font-weight: 600;
+}
+
+.footer .btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: #476225 !important; /* The dark green text on white background */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
