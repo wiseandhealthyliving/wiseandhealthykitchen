@@ -1,24 +1,19 @@
 /* =============================================================
-   Wise & Healthy Kitchen - Master Stylesheet
-   Theme: Organic, Non-Toxic, Farm-to-Table Aesthetic
+   Wise & Healthy Kitchen - MASTER STYLESHEET (Final Fixed)
    ============================================================= */
 
-/* ===== CSS Variables (Unified Palette) ===== */
 :root {
-    /* Colors from Reference Image */
-    --earth-green: #476225;      /* Dark forest green */
-    --sage-green: #8a9a7b;       /* Soft leaf green */
-    --olive-accent: #a3b15a;     /* Lighter olive */
-    --warm-cream: #f9f7f0;       /* Main background */
-    --wood-brown: #a9916c;       /* Warm heading brown */
-    --dark-oak: #4a3b2b;         /* Primary text brown */
+    --earth-green: #476225;
+    --sage-green: #8a9a7b;
+    --olive-accent: #a3b15a;
+    --warm-cream: #f9f7f0;
+    --wood-brown: #a9916c;
+    --dark-oak: #4a3b2b;
     --soft-white: #ffffff;
     
-    /* Typography */
     --font-serif: 'Merriweather', serif;
     --font-sans: 'Lato', sans-serif;
     
-    /* UI Elements */
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
@@ -32,10 +27,7 @@ body {
     background-color: var(--warm-cream);
     color: var(--dark-oak);
     line-height: 1.7;
-    animation: fadeIn 0.5s ease;
 }
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 h1, h2, h3, h4, .brand-text {
     font-family: var(--font-serif);
@@ -51,20 +43,9 @@ h1, h2, h3, h4, .brand-text {
     box-shadow: var(--shadow-sm);
 }
 
-.navbar-brand {
-    font-weight: 900;
-    font-size: 1.2rem;
-}
-
-.nav-link {
-    color: var(--dark-oak) !important;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--earth-green) !important;
-}
+.navbar-brand { font-weight: 900; }
+.nav-link { font-weight: 600; color: var(--dark-oak) !important; }
+.nav-link.active, .nav-link:hover { color: var(--earth-green) !important; }
 
 /* ===== Hero Carousel ===== */
 #heroCarousel { height: 600px; }
@@ -78,32 +59,52 @@ h1, h2, h3, h4, .brand-text {
 .carousel-item:nth-child(2) .carousel-bg { background: linear-gradient(135deg, rgba(74, 59, 43, 0.9) 0%, rgba(107, 124, 89, 0.8) 100%) !important; }
 .carousel-item:nth-child(3) .carousel-bg { background: linear-gradient(135deg, rgba(169, 145, 108, 0.9) 0%, rgba(249, 247, 240, 0.7) 100%) !important; }
 
-/* Carousel Indicators */
-.carousel-indicators [button] { background-color: var(--wood-brown); }
-.carousel-indicators .active { background-color: var(--earth-green); }
 .carousel-indicators button {
     background-color: var(--wood-brown) !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
 }
+.carousel-indicators .active { background-color: var(--earth-green) !important; }
 
-/* Slide 3 Text Fix */
-.carousel-item:nth-child(3) .carousel-caption h1,
-.carousel-item:nth-child(3) .carousel-caption p { color: var(--dark-oak); text-shadow: none; }
-.carousel-item:nth-child(3) .btn-light { background-color: var(--earth-green); color: white; border: none; }
-
-/* ===== Cards & Sections ===== */
-.bg-light { background-color: #f2efe4 !important; } /* Warm beige */
+/* ===== Cards & Sections (FIXED BADGE POSITIONING) ===== */
+.bg-light { background-color: #f2efe4 !important; }
 
 .card {
     background-color: var(--soft-white);
     border: 1px solid #e0ddd5;
     border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--sage-green);
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.safety-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.card-img-container {
+    height: 220px;
+    width: 100%;
+    position: relative;
+}
+
+.product-image-placeholder, .blog-image-placeholder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stat-card {
@@ -121,37 +122,26 @@ h1, h2, h3, h4, .brand-text {
     border-radius: 0.5rem;
 }
 
-/* ===== Floating Reveal Animation ===== */
-
-/* 1. Define the entrance state */
+/* ===== Reveal Animation ===== */
 .product-card, .blog-card, .stat-card {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* 2. Animation trigger (Apply this class via JS or just let them load) */
 .reveal {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
-/* 3. Subtle continuous floating effect for Featured Products */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.product-card:hover {
-    animation: none; /* Stop floating on hover so user can click easily */
-    transform: translateY(-15px) scale(1.02);
+.card:hover {
+    transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--sage-green);
 }
-
 
 /* ===== Buttons ===== */
-.btn { border-radius: 0.5rem; padding: 0.75rem 1.5rem; font-weight: 600; transition: all 0.3s ease; }
+.btn { border-radius: 0.5rem; padding: 0.75rem 1.5rem; font-weight: 600; }
 
 .btn-success {
     background-color: var(--earth-green) !important;
@@ -164,70 +154,14 @@ h1, h2, h3, h4, .brand-text {
     transform: translateY(-2px);
 }
 
-.btn-outline-success {
-    color: var(--earth-green) !important;
-    border: 2px solid var(--earth-green) !important;
-}
-
-.btn-outline-success:hover {
-    background-color: var(--earth-green) !important;
-    color: white !important;
-}
+/* Fix for subtle badges so text is visible */
+.bg-success-subtle { background-color: #d1e7dd !important; color: #0f5132 !important; }
+.bg-primary-subtle { background-color: #cfe2ff !important; color: #084298 !important; }
+.bg-warning-subtle { background-color: #fff3cd !important; color: #664d03 !important; }
 
 /* ===== Icons & Utilities ===== */
-/* Change this section in your CSS */
-/* Target only the icons or specific text, NOT the bootstrap utility classes globally */
-.bi-heart-pulse, 
-.bi-shield-check, 
-.bi-check2-circle, 
-i.text-success { 
-    color: var(--sage-green) !important; 
-}
-
-/* Ensure badges keep their intended text color */
-.badge {
-    color: #fff; /* Default badge text to white */
-}
-.text-dark { color: #212529 !important; } /* Restore dark text for light badges */
-
-/* ===== Newsletter Section ===== */
-.newsletter-section {
-    background: linear-gradient(135deg, var(--earth-green) 0%, var(--dark-oak) 100%) !important;
-    color: white;
-}
-
-.card-img-container {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.product-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Position the badges correctly over the images */
-.product-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
-}
-
-.safety-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 10;
-}
-
-
-
+.bi-heart-pulse, .bi-shield-check, .bi-check2-circle { color: var(--sage-green) !important; }
+.bi-award, .bi-info-circle, .bi-clock { color: var(--wood-brown) !important; }
 
 /* ===== Footer ===== */
 .footer {
@@ -237,44 +171,19 @@ i.text-success {
     padding-top: 4rem;
 }
 
-.footer h5 { color: white !important; font-family: var(--font-serif); }
-
-.footer a, .footer .text-muted {
-    color: rgba(255, 255, 255, 0.75) !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer a:hover {
-    color: white !important;
-    text-decoration: underline !important;
-}
-
-.footer hr { background-color: white; opacity: 0.1; }
-
-.footer .btn-outline-light {
-    border: 2px solid var(--warm-cream);
-    color: var(--warm-cream);
-}
-
-.footer .btn-outline-light:hover {
-    background-color: var(--warm-cream) !important;
-    color: var(--earth-green) !important;
-    transform: translateY(-2px);
-}
-
-/* ===== Scrollbar & Back to Top ===== */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--warm-cream); }
-::-webkit-scrollbar-thumb { background: var(--sage-green); border-radius: 5px; }
-
-#backToTop {
-    background-color: var(--earth-green) !important;
-    border: none;
-}
+.footer h5 { color: white !important; }
+.footer a { color: rgba(255, 255, 255, 0.75) !important; text-decoration: none; }
+.footer a:hover { color: white !important; text-decoration: underline !important; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     #heroCarousel { height: 450px; }
     .carousel-caption h1 { font-size: 1.8rem; }
+    .card-img-container { height: 180px; }
+}
+
+#backToTop {
+    background-color: var(--earth-green) !important;
+    border: none;
+    z-index: 1000;
 }
