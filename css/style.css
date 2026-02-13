@@ -81,6 +81,9 @@ h1, h2, h3, h4, .brand-text {
 /* Carousel Indicators */
 .carousel-indicators [button] { background-color: var(--wood-brown); }
 .carousel-indicators .active { background-color: var(--earth-green); }
+.carousel-indicators button {
+    background-color: var(--wood-brown) !important;
+}
 
 /* Slide 3 Text Fix */
 .carousel-item:nth-child(3) .carousel-caption h1,
@@ -172,15 +175,59 @@ h1, h2, h3, h4, .brand-text {
 }
 
 /* ===== Icons & Utilities ===== */
-.bi-heart-pulse, .bi-shield-check, .bi-check2-circle, .text-success { color: var(--sage-green) !important; }
-.bi-award, .bi-info-circle, .bi-clock, .text-warning { color: var(--wood-brown) !important; }
-.bi-x-circle, .text-danger { color: var(--earth-green) !important; } /* Softened alerts */
+/* Change this section in your CSS */
+/* Target only the icons or specific text, NOT the bootstrap utility classes globally */
+.bi-heart-pulse, 
+.bi-shield-check, 
+.bi-check2-circle, 
+i.text-success { 
+    color: var(--sage-green) !important; 
+}
+
+/* Ensure badges keep their intended text color */
+.badge {
+    color: #fff; /* Default badge text to white */
+}
+.text-dark { color: #212529 !important; } /* Restore dark text for light badges */
 
 /* ===== Newsletter Section ===== */
 .newsletter-section {
     background: linear-gradient(135deg, var(--earth-green) 0%, var(--dark-oak) 100%) !important;
     color: white;
 }
+
+.card-img-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Position the badges correctly over the images */
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.safety-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+
+
 
 /* ===== Footer ===== */
 .footer {
