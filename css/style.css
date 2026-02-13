@@ -720,4 +720,148 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+:root {
+    /* Color Palette from Image */
+    --earth-green: #476225;      /* Dark forest green from footer/logo */
+    --sage-green: #8a9a7b;       /* Soft green from leaves */
+    --olive-accent: #a3b15a;     /* Lighter olive for buttons */
+    --warm-cream: #f9f7f0;       /* Main background cream */
+    --wood-brown: #a9916c;       /* Warm brown for headings/details */
+    --dark-oak: #4a3b2b;         /* Dark brown for primary text */
+}
+
+/* Global Styles */
+body {
+    background-color: var(--warm-cream);
+    color: var(--dark-oak);
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, .brand-text {
+    font-family: 'Merriweather', serif;
+    color: var(--earth-green);
+}
+
+/* Navigation */
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 3px solid var(--sage-green);
+}
+
+.nav-link {
+    color: var(--dark-oak) !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--earth-green) !important;
+}
+
+/* Buttons */
+.btn-success {
+    background-color: var(--earth-green) !important;
+    border-color: var(--earth-green) !important;
+}
+
+.btn-success:hover {
+    background-color: var(--dark-oak) !important;
+    border-color: var(--dark-oak) !important;
+}
+
+.btn-outline-success {
+    color: var(--earth-green) !important;
+    border-color: var(--earth-green) !important;
+}
+
+.btn-outline-success:hover {
+    background-color: var(--earth-green) !important;
+    color: white !important;
+}
+
+/* Cards & Sections */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0ddd5;
+}
+
+.bg-light {
+    background-color: #f2efe4 !important; /* Slightly darker cream for contrast */
+}
+
+/* Hero Section Adjustments */
+.hero-section .carousel-item {
+    background-color: var(--earth-green);
+}
+
+/* Footer (Matching your requested green) */
+.footer {
+    background-color: var(--earth-green) !important;
+    color: var(--warm-cream) !important;
+    border-top: 5px solid var(--wood-brown);
+}
+
+.footer a, .footer .text-muted {
+    color: #d1d9c9 !important; /* Light sage-tinted white */
+}
+
+.footer a:hover {
+    color: #ffffff !important;
+}
+
+.footer hr {
+    opacity: 0.1;
+    background-color: var(--warm-cream);
+}
+
+/* The "Subscribe" button in footer */
+.footer .btn-outline-light {
+    border-color: var(--warm-cream);
+    color: var(--warm-cream);
+}
+
+.footer .btn-outline-light:hover {
+    background-color: var(--warm-cream) !important;
+    color: var(--earth-green) !important;
+}
+
+/* Update Hero Carousel Gradients */
+
+/* Slide 1: Sage & Earth (The Greens) */
+.carousel-item:nth-child(1) .carousel-bg {
+    background: linear-gradient(135deg, rgba(71, 98, 37, 0.9) 0%, rgba(138, 154, 123, 0.8) 100%) !important;
+}
+
+/* Slide 2: Deep Oak & Forest (The Browns) */
+.carousel-item:nth-child(2) .carousel-bg {
+    background: linear-gradient(135deg, rgba(74, 59, 43, 0.9) 0%, rgba(107, 124, 89, 0.8) 100%) !important;
+}
+
+/* Slide 3: Warm Wood & Cream (The Accents) */
+.carousel-item:nth-child(3) .carousel-bg {
+    background: linear-gradient(135deg, rgba(169, 145, 108, 0.9) 0%, rgba(249, 247, 240, 0.7) 100%) !important;
+}
+
+/* Fix text contrast on Slide 3 since it's lighter */
+.carousel-item:nth-child(3) .carousel-caption h1,
+.carousel-item:nth-child(3) .carousel-caption p {
+    color: var(--dark-oak);
+    text-shadow: none;
+}
+
+.carousel-item:nth-child(3) .btn-light {
+    background-color: var(--earth-green);
+    color: white;
+    border: none;
+}
+
+/* Styling the Carousel Indicators to match the wood/sage theme */
+.carousel-indicators [button] {
+    background-color: var(--wood-brown);
+}
+
+.carousel-indicators .active {
+    background-color: var(--earth-green);
+}
+
+
 
