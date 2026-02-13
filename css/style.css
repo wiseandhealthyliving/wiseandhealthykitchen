@@ -261,4 +261,39 @@ h1, h2, h3, h4, .brand-text {
         font-size: 1.2rem;
     }
 }
+/* ===== Contact Section Styles ===== */
+.contact-section {
+    background-color: var(--warm-cream);
+}
+
+.custom-input {
+    border: 2px solid #eee !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.custom-input:focus {
+    border-color: var(--sage-green) !important;
+    box-shadow: 0 0 0 0.25rem rgba(138, 154, 123, 0.15) !important;
+}
+
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Ensure the text color inside the green info box is white */
+.contact-info-box p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info-box .icon-circle i {
+    color: var(--earth-green);
+}
 
