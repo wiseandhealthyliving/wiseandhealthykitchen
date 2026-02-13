@@ -1,204 +1,106 @@
-/* ===================================
-   Wise & Healthy Kitchen - Stylesheet
-   Health-Focused, Clean, Trustworthy Design
-   =================================== */
+/* =============================================================
+   Wise & Healthy Kitchen - Master Stylesheet
+   Theme: Organic, Non-Toxic, Farm-to-Table Aesthetic
+   ============================================================= */
 
-/* ===== CSS Variables ===== */
+/* ===== CSS Variables (Unified Palette) ===== */
 :root {
-    /* Organic & Natural Earth Tones */
-    --sage-green: #8a9a7b;
-    --olive-green: #6b7c59;
-    --dark-olive: #4a5943;
-    --cream: #f5f3ed;
-    --beige: #e8e4d9;
-    --warm-beige: #d4cfc2;
-    --natural-wood: #a9916c;
-    --soft-white: #faf9f6;
-    --text-dark: #3a3a3a;
-    --text-muted: #6b6b6b;
+    /* Colors from Reference Image */
+    --earth-green: #476225;      /* Dark forest green */
+    --sage-green: #8a9a7b;       /* Soft leaf green */
+    --olive-accent: #a3b15a;     /* Lighter olive */
+    --warm-cream: #f9f7f0;       /* Main background */
+    --wood-brown: #a9916c;       /* Warm heading brown */
+    --dark-oak: #4a3b2b;         /* Primary text brown */
+    --soft-white: #ffffff;
     
-    /* Typography - Clean & Professional */
+    /* Typography */
     --font-serif: 'Merriweather', serif;
     --font-sans: 'Lato', sans-serif;
     
-    /* Spacing */
-    --section-padding: 5rem;
-    
-    /* Shadows - Softer, organic feel */
-    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.12);
+    /* UI Elements */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* ===== Global Styles ===== */
+html { scroll-behavior: smooth; }
+
 body {
     font-family: var(--font-sans);
-    color: var(--text-dark);
+    background-color: var(--warm-cream);
+    color: var(--dark-oak);
     line-height: 1.7;
-    overflow-x: hidden;
-    background-color: var(--soft-white);
+    animation: fadeIn 0.5s ease;
 }
 
-h1, h2, h3, h4, h5, h6,
-.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+h1, h2, h3, h4, .brand-text {
     font-family: var(--font-serif);
+    color: var(--earth-green);
     font-weight: 700;
-    line-height: 1.3;
-    color: var(--text-dark);
-}
-
-a {
-    transition: all 0.3s ease;
 }
 
 /* ===== Navigation ===== */
 .navbar {
     background-color: var(--soft-white) !important;
-    border-bottom: 3px solid var(--beige);
+    border-bottom: 3px solid var(--sage-green);
     padding: 1rem 0;
+    box-shadow: var(--shadow-sm);
 }
 
 .navbar-brand {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
     font-weight: 900;
-    color: var(--text-dark) !important;
-}
-
-.brand-text {
-    background: linear-gradient(135deg, var(--sage-green) 0%, var(--olive-green) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 1.2rem;
 }
 
 .nav-link {
+    color: var(--dark-oak) !important;
     font-weight: 600;
-    color: var(--text-dark) !important;
-    position: relative;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--sage-green);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 50%;
-}
-
-.dropdown-menu {
-    border: 1px solid var(--beige);
-    box-shadow: var(--shadow-lg);
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    background-color: var(--soft-white);
+.nav-link:hover, .nav-link.active {
+    color: var(--earth-green) !important;
 }
 
 /* ===== Hero Carousel ===== */
-.hero-section {
-    position: relative;
+#heroCarousel { height: 600px; }
+.carousel-inner, .carousel-item { height: 100%; }
+.carousel-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); z-index: 2; }
+.carousel-caption { z-index: 3; top: 50%; transform: translateY(-50%); bottom: auto; }
+
+/* Slide Specific Gradients */
+.carousel-item:nth-child(1) .carousel-bg { background: linear-gradient(135deg, rgba(71, 98, 37, 0.9) 0%, rgba(138, 154, 123, 0.8) 100%) !important; }
+.carousel-item:nth-child(2) .carousel-bg { background: linear-gradient(135deg, rgba(74, 59, 43, 0.9) 0%, rgba(107, 124, 89, 0.8) 100%) !important; }
+.carousel-item:nth-child(3) .carousel-bg { background: linear-gradient(135deg, rgba(169, 145, 108, 0.9) 0%, rgba(249, 247, 240, 0.7) 100%) !important; }
+
+/* Carousel Indicators */
+.carousel-indicators [button] { background-color: var(--wood-brown); }
+.carousel-indicators .active { background-color: var(--earth-green); }
+
+/* Slide 3 Text Fix */
+.carousel-item:nth-child(3) .carousel-caption h1,
+.carousel-item:nth-child(3) .carousel-caption p { color: var(--dark-oak); text-shadow: none; }
+.carousel-item:nth-child(3) .btn-light { background-color: var(--earth-green); color: white; border: none; }
+
+/* ===== Cards & Sections ===== */
+.bg-light { background-color: #f2efe4 !important; } /* Warm beige */
+
+.card {
+    background-color: var(--soft-white);
+    border: 1px solid #e0ddd5;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#heroCarousel {
-    height: 600px;
-}
-
-#heroCarousel .carousel-inner,
-#heroCarousel .carousel-item {
-    height: 100%;
-}
-
-.carousel-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.carousel-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 2;
-}
-
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 3;
-}
-
-.carousel-caption h1 {
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-caption p {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-slide-up {
-    animation: slideUp 0.8s ease both;
-}
-
-/* ===== Trust Section ===== */
-.trust-section i {
-    transition: transform 0.3s ease;
-}
-
-.trust-section .col-md-3:hover i,
-.trust-section .col-6:hover i {
-    transform: scale(1.1);
-}
-
-/* ===== Why Section ===== */
-.why-section {
-    background: linear-gradient(to bottom, #ffffff 0%, var(--bg-light) 100%);
-}
-
-.info-box {
-    padding: 2rem;
-}
-
-.feature-item {
-    padding: 0.5rem 0;
-    font-size: 1rem;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--sage-green);
 }
 
 .stat-card {
@@ -207,570 +109,61 @@ a {
     border-radius: 1rem;
     text-align: center;
     box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.stat-card h3 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-green);
-}
-
-/* ===== Section Titles ===== */
-.section-title {
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--primary-green);
-    border-radius: 2px;
-}
-
-/* ===== Product Cards ===== */
-.product-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    background: white;
-}
-
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--primary-green);
-}
-
-.product-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
-}
-
-.safety-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 10;
-}
-
-.product-badge .badge,
-.safety-badge .badge {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: var(--shadow-md);
-}
-
-.card-img-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.product-image-placeholder {
-    width: 100%;
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.4s ease;
-}
-
-.product-card:hover .product-image-placeholder {
-    transform: scale(1.05);
 }
 
 .safety-features {
-    background: #f0fdf4;
-    border-left: 3px solid var(--primary-green);
+    background: var(--warm-cream);
+    border-left: 4px solid var(--sage-green);
     padding: 1rem;
     border-radius: 0.5rem;
-    margin: 1rem 0;
 }
 
-.safety-features ul {
-    padding-left: 1.2rem;
-    margin-bottom: 0;
+/* ===== Floating Reveal Animation ===== */
+
+/* 1. Define the entrance state */
+.product-card, .blog-card, .stat-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.safety-features li {
-    margin-bottom: 0.3rem;
+/* 2. Animation trigger (Apply this class via JS or just let them load) */
+.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
-.rating i {
-    font-size: 0.9rem;
+/* 3. Subtle continuous floating effect for Featured Products */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
-/* ===== Blog Cards ===== */
-.blog-card {
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid #e5e7eb;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
+.product-card:hover {
+    animation: none; /* Stop floating on hover so user can click easily */
+    transform: translateY(-15px) scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 
-.blog-image-placeholder {
-    width: 100%;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.4s ease;
-}
-
-.blog-card:hover .blog-image-placeholder {
-    transform: scale(1.05);
-}
-
-/* ===== Mission Section ===== */
-.mission-card {
-    text-align: center;
-    padding: 1.5rem;
-}
-
-.mission-card i {
-    display: block;
-}
-
-/* ===== Newsletter Section ===== */
-.newsletter-section {
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.newsletter-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-/* ===== Footer ===== */
-.footer {
-    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-}
-
-.footer h5 {
-    position: relative;
-    padding-bottom: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.footer h5::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--primary-green);
-    border-radius: 2px;
-}
-
-.footer a:hover {
-    color: var(--light-green) !important;
-}
-
-.social-links a {
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-}
 
 /* ===== Buttons ===== */
-.btn {
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    text-transform: none;
-    letter-spacing: 0.3px;
-}
+.btn { border-radius: 0.5rem; padding: 0.75rem 1.5rem; font-weight: 600; transition: all 0.3s ease; }
 
-.btn-success {
-    background: linear-gradient(135deg, var(--sage-green) 0%, var(--olive-green) 100%);
-    border: none;
-    color: white;
-    box-shadow: 0 4px 15px rgba(138, 154, 123, 0.3);
-}
-
-.btn-success:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(138, 154, 123, 0.4);
-    background: linear-gradient(135deg, var(--olive-green) 0%, var(--sage-green) 100%);
-}
-
-.btn-outline-success {
-    border: 2px solid var(--sage-green);
-    color: var(--sage-green);
-    background: transparent;
-}
-
-.btn-outline-success:hover {
-    background: var(--sage-green);
-    color: white;
-    transform: translateY(-2px);
-}
-
-.btn-light {
-    background: var(--cream);
-    color: var(--text-dark);
-    border: none;
-}
-
-.btn-light:hover {
-    background: var(--beige);
-    transform: translateY(-2px);
-}
-
-.btn-outline-light {
-    border: 2px solid white;
-    color: white;
-}
-
-.btn-outline-light:hover {
-    background: white;
-    color: var(--text-dark);
-}
-
-/* ===== Back to Top Button ===== */
-#backToTop {
-    z-index: 1000;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-#backToTop:hover {
-    transform: translateY(-5px);
-}
-
-/* ===== Badges ===== */
-.badge {
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    border-radius: 0.375rem;
-}
-
-/* ===== Utilities ===== */
-.text-success {
-    color: var(--sage-green) !important;
-}
-
-.bg-success {
-    background-color: var(--sage-green) !important;
-}
-
-.border-success {
-    border-color: var(--sage-green) !important;
-}
-
-.bg-light {
-    background-color: var(--cream) !important;
-}
-
-/* ===== Health-Focused Accents ===== */
-.bg-health-light {
-    background-color: var(--cream);
-}
-
-.text-health {
-    color: var(--sage-green);
-}
-
-.border-health {
-    border-color: var(--sage-green);
-}
-
-/* ===== Section Title ===== */
-.section-title::after {
-    background: var(--sage-green);
-}
-
-/* ===== Safety Features Box ===== */
-.safety-features {
-    background: var(--cream);
-    border-left: 3px solid var(--sage-green);
-}
-
-/* ===== Newsletter Section ===== */
-.newsletter-section {
-    background: linear-gradient(135deg, var(--olive-green) 0%, var(--dark-olive) 100%);
-}
-
-/* ===== Success Box ===== */
-.success-box {
-    background: var(--cream);
-    border-left: 4px solid var(--sage-green);
-}
-
-/* ===== TOC Box ===== */
-.toc-box {
-    background: var(--cream);
-    border-left: 4px solid var(--sage-green);
-}
-
-/* ===== Why Section ===== */
-.why-section {
-    background: linear-gradient(to bottom, var(--soft-white) 0%, var(--cream) 100%);
-}
-
-/* ===== Stat Card ===== */
-.stat-card h3 {
-    color: var(--sage-green);
-}
-
-/* ===== Product Card Hover ===== */
-.product-card:hover {
-    border-color: var(--sage-green);
-}
-
-/* ===== Form Focus ===== */
-.form-control:focus {
-    border-color: var(--sage-green);
-    box-shadow: 0 0 0 0.2rem rgba(138, 154, 123, 0.15);
-}
-
-/* ===== Scrollbar ===== */
-::-webkit-scrollbar-thumb {
-    background: var(--sage-green);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--olive-green);
-}
-
-/* ===== Back to Top ===== */
-#backToTop {
-    background: var(--sage-green) !important;
-    border: none;
-}
-
-#backToTop:hover {
-    background: var(--olive-green) !important;
-}
-
-/* ===== Footer ===== */
-.footer h5::after {
-    background: var(--sage-green);
-}
-
-/* ===== Responsive Design ===== */
-@media (max-width: 992px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    #heroCarousel {
-        height: 500px;
-    }
-    
-    .carousel-caption h1 {
-        font-size: 2rem;
-    }
-    
-    .section-title {
-        font-size: 2rem !important;
-    }
-    
-    .product-image-placeholder,
-    .blog-image-placeholder {
-        height: 220px;
-    }
-}
-
-@media (max-width: 576px) {
-    #heroCarousel {
-        height: 450px;
-    }
-    
-    .carousel-caption h1 {
-        font-size: 1.75rem;
-    }
-    
-    .btn-lg {
-        padding: 0.6rem 1.5rem;
-        font-size: 1rem;
-    }
-    
-    .stats-grid {
-        gap: 1rem;
-    }
-    
-    .stat-card {
-        padding: 1.5rem;
-    }
-}
-
-/* ===== Smooth Scrolling ===== */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ===== Loading Animation ===== */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-body {
-    animation: fadeIn 0.5s ease;
-}
-
-/* ===== Form Styles ===== */
-.form-control:focus {
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 0.2rem rgba(22, 163, 74, 0.15);
-}
-
-/* ===== Custom Scrollbar ===== */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-green);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-green);
-}
-
-/* ===== Health-Focused Accents ===== */
-.bg-health-light {
-    background-color: #f0fdf4;
-}
-
-.text-health {
-    color: var(--primary-green);
-}
-
-.border-health {
-    border-color: var(--primary-green);
-}
-
-.footer {
-    background-color: #476225 !important;
-    color: white !important;
-}
-
-/* This ensures the links inside the footer are also readable */
-.footer a, 
-.footer .text-muted {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.footer a:hover {
-    color: #ffffff !important;
-    text-decoration: underline !important;
-}
-
-/* Adjusting the horizontal rule for better visibility */
-.footer hr {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Custom Footer Button Hover Effect */
-.footer .btn-outline-light {
-    transition: all 0.3s ease;
-    border-width: 2px;
-    font-weight: 600;
-}
-
-.footer .btn-outline-light:hover {
-    background-color: #ffffff !important;
-    color: #476225 !important; /* The dark green text on white background */
-    transform: translateY(-2px); /* Subtle lift effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-:root {
-    /* Color Palette from Image */
-    --earth-green: #476225;      /* Dark forest green from footer/logo */
-    --sage-green: #8a9a7b;       /* Soft green from leaves */
-    --olive-accent: #a3b15a;     /* Lighter olive for buttons */
-    --warm-cream: #f9f7f0;       /* Main background cream */
-    --wood-brown: #a9916c;       /* Warm brown for headings/details */
-    --dark-oak: #4a3b2b;         /* Dark brown for primary text */
-}
-
-/* Global Styles */
-body {
-    background-color: var(--warm-cream);
-    color: var(--dark-oak);
-    font-family: 'Lato', sans-serif;
-}
-
-h1, h2, h3, .brand-text {
-    font-family: 'Merriweather', serif;
-    color: var(--earth-green);
-}
-
-/* Navigation */
-.navbar {
-    background-color: #ffffff !important;
-    border-bottom: 3px solid var(--sage-green);
-}
-
-.nav-link {
-    color: var(--dark-oak) !important;
-    font-weight: 600;
-}
-
-.nav-link:hover {
-    color: var(--earth-green) !important;
-}
-
-/* Buttons */
 .btn-success {
     background-color: var(--earth-green) !important;
     border-color: var(--earth-green) !important;
+    color: white !important;
 }
 
 .btn-success:hover {
     background-color: var(--dark-oak) !important;
-    border-color: var(--dark-oak) !important;
+    transform: translateY(-2px);
 }
 
 .btn-outline-success {
     color: var(--earth-green) !important;
-    border-color: var(--earth-green) !important;
+    border: 2px solid var(--earth-green) !important;
 }
 
 .btn-outline-success:hover {
@@ -778,131 +171,63 @@ h1, h2, h3, .brand-text {
     color: white !important;
 }
 
-/* Cards & Sections */
-.card {
-    background-color: #ffffff;
-    border: 1px solid #e0ddd5;
+/* ===== Icons & Utilities ===== */
+.bi-heart-pulse, .bi-shield-check, .bi-check2-circle, .text-success { color: var(--sage-green) !important; }
+.bi-award, .bi-info-circle, .bi-clock, .text-warning { color: var(--wood-brown) !important; }
+.bi-x-circle, .text-danger { color: var(--earth-green) !important; } /* Softened alerts */
+
+/* ===== Newsletter Section ===== */
+.newsletter-section {
+    background: linear-gradient(135deg, var(--earth-green) 0%, var(--dark-oak) 100%) !important;
+    color: white;
 }
 
-.bg-light {
-    background-color: #f2efe4 !important; /* Slightly darker cream for contrast */
-}
-
-/* Hero Section Adjustments */
-.hero-section .carousel-item {
-    background-color: var(--earth-green);
-}
-
-/* Footer (Matching your requested green) */
+/* ===== Footer ===== */
 .footer {
     background-color: var(--earth-green) !important;
     color: var(--warm-cream) !important;
     border-top: 5px solid var(--wood-brown);
+    padding-top: 4rem;
 }
 
+.footer h5 { color: white !important; font-family: var(--font-serif); }
+
 .footer a, .footer .text-muted {
-    color: #d1d9c9 !important; /* Light sage-tinted white */
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
-    color: #ffffff !important;
+    color: white !important;
+    text-decoration: underline !important;
 }
 
-.footer hr {
-    opacity: 0.1;
-    background-color: var(--warm-cream);
-}
+.footer hr { background-color: white; opacity: 0.1; }
 
-/* The "Subscribe" button in footer */
 .footer .btn-outline-light {
-    border-color: var(--warm-cream);
+    border: 2px solid var(--warm-cream);
     color: var(--warm-cream);
 }
 
 .footer .btn-outline-light:hover {
     background-color: var(--warm-cream) !important;
     color: var(--earth-green) !important;
+    transform: translateY(-2px);
 }
 
-/* Update Hero Carousel Gradients */
+/* ===== Scrollbar & Back to Top ===== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--warm-cream); }
+::-webkit-scrollbar-thumb { background: var(--sage-green); border-radius: 5px; }
 
-/* Slide 1: Sage & Earth (The Greens) */
-.carousel-item:nth-child(1) .carousel-bg {
-    background: linear-gradient(135deg, rgba(71, 98, 37, 0.9) 0%, rgba(138, 154, 123, 0.8) 100%) !important;
-}
-
-/* Slide 2: Deep Oak & Forest (The Browns) */
-.carousel-item:nth-child(2) .carousel-bg {
-    background: linear-gradient(135deg, rgba(74, 59, 43, 0.9) 0%, rgba(107, 124, 89, 0.8) 100%) !important;
-}
-
-/* Slide 3: Warm Wood & Cream (The Accents) */
-.carousel-item:nth-child(3) .carousel-bg {
-    background: linear-gradient(135deg, rgba(169, 145, 108, 0.9) 0%, rgba(249, 247, 240, 0.7) 100%) !important;
-}
-
-/* Fix text contrast on Slide 3 since it's lighter */
-.carousel-item:nth-child(3) .carousel-caption h1,
-.carousel-item:nth-child(3) .carousel-caption p {
-    color: var(--dark-oak);
-    text-shadow: none;
-}
-
-.carousel-item:nth-child(3) .btn-light {
-    background-color: var(--earth-green);
-    color: white;
+#backToTop {
+    background-color: var(--earth-green) !important;
     border: none;
 }
 
-/* Styling the Carousel Indicators to match the wood/sage theme */
-.carousel-indicators [button] {
-    background-color: var(--wood-brown);
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    #heroCarousel { height: 450px; }
+    .carousel-caption h1 { font-size: 1.8rem; }
 }
-
-.carousel-indicators .active {
-    background-color: var(--earth-green);
-}
-
-/* Custom Icon Colors to match the Palette */
-
-/* Health & Success Icons (Sage Green) */
-.bi-shield-fill-check, 
-.bi-check2-circle, 
-.bi-heart-pulse, 
-.bi-shield-check,
-.text-success {
-    color: var(--sage-green) !important;
-}
-
-/* Premium & Trust Icons (Wood Brown) */
-.bi-award, 
-.bi-star-fill, 
-.bi-info-circle,
-.bi-clock,
-.text-warning,
-.text-info {
-    color: var(--wood-brown) !important;
-}
-
-/* Alert Icons (Earth Green or Dark Oak for visibility) */
-.bi-exclamation-triangle,
-.bi-x-circle,
-.bi-x-circle-fill,
-.text-danger {
-    color: var(--earth-green) !important; /* Softens the "alert" look to be less aggressive */
-}
-
-/* Navigation & Footer Icons */
-.navbar-brand .bi-heart-pulse,
-.footer .bi-heart-pulse {
-    color: var(--olive-accent) !important; /* Brighter olive for branding */
-}
-
-.footer .bi-envelope, 
-.footer .bi-geo-alt, 
-.footer .bi-clock,
-.footer .social-links i {
-    color: var(--wood-brown) !important;
-}
-
-
