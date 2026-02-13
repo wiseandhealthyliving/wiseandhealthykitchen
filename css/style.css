@@ -863,5 +863,46 @@ h1, h2, h3, .brand-text {
     background-color: var(--earth-green);
 }
 
+/* Custom Icon Colors to match the Palette */
+
+/* Health & Success Icons (Sage Green) */
+.bi-shield-fill-check, 
+.bi-check2-circle, 
+.bi-heart-pulse, 
+.bi-shield-check,
+.text-success {
+    color: var(--sage-green) !important;
+}
+
+/* Premium & Trust Icons (Wood Brown) */
+.bi-award, 
+.bi-star-fill, 
+.bi-info-circle,
+.bi-clock,
+.text-warning,
+.text-info {
+    color: var(--wood-brown) !important;
+}
+
+/* Alert Icons (Earth Green or Dark Oak for visibility) */
+.bi-exclamation-triangle,
+.bi-x-circle,
+.bi-x-circle-fill,
+.text-danger {
+    color: var(--earth-green) !important; /* Softens the "alert" look to be less aggressive */
+}
+
+/* Navigation & Footer Icons */
+.navbar-brand .bi-heart-pulse,
+.footer .bi-heart-pulse {
+    color: var(--olive-accent) !important; /* Brighter olive for branding */
+}
+
+.footer .bi-envelope, 
+.footer .bi-geo-alt, 
+.footer .bi-clock,
+.footer .social-links i {
+    color: var(--wood-brown) !important;
+}
 
 
