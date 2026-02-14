@@ -43,6 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
         
         lastScroll = currentScroll;
     });
+
+        // ===== Search Form Handler =====
+    const searchForm = document.querySelector('.search-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = this.querySelector('input').value;
+            if (query.trim()) {
+                console.log('Searching for:', query);
+                // Redirect to a search page or filter products
+                // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                alert('Searching for: ' + query + '. (Search results page coming soon!)');
+            }
+        });
+    }
+
     
     // ===== Smooth Scroll for Anchor Links =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
