@@ -66,6 +66,39 @@ h1, h2, h3, h4, .brand-text {
     }
 }
 
+/* ===== Search Bar Styling ===== */
+.search-form .input-group {
+    max-width: 250px;
+}
+
+.custom-search-input {
+    border-radius: 20px 0 0 20px !important;
+    border: 1px solid var(--sage-green) !important;
+    background-color: var(--warm-cream) !important;
+    font-size: 0.9rem;
+}
+
+.custom-search-btn {
+    border-radius: 0 20px 20px 0 !important;
+    border: 1px solid var(--sage-green) !important;
+    border-left: none !important;
+    background-color: var(--soft-white) !important;
+    color: var(--earth-green) !important;
+}
+
+.custom-search-btn:hover {
+    background-color: var(--earth-green) !important;
+    color: white !important;
+}
+
+/* On Mobile, make it full width */
+@media (max-width: 991px) {
+    .search-form .input-group {
+        max-width: 100%;
+    }
+}
+
+
 /* ===== Hero Carousel ===== */
 #heroCarousel { height: 600px; }
 .carousel-inner, .carousel-item { height: 100%; }
