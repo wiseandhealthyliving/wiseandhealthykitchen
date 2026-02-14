@@ -212,7 +212,7 @@ h1, h2, h3, h4, .brand-text {
 .bg-warning-subtle { background-color: #fff3cd !important; color: #664d03 !important; }
 
 /* ===== Icons & Utilities ===== */
-.bi-heart-pulse, .bi-shield-check, .bi-check2-circle { color: var(--sage-green) !important; }
+.bi-heart-pulse, .bi-shield-check, .bi-check2-circle { color: var(--sage-green); }
 .bi-award, .bi-info-circle, .bi-clock { color: var(--wood-brown) !important; }
 
 /* ===== Footer ===== */
