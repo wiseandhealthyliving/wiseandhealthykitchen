@@ -32,9 +32,363 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
- 
-    <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+    /* =============================================================
+   Wise & Healthy Kitchen - MASTER STYLESHEET (Final Fixed)
+   ============================================================= */
+
+:root {
+    --earth-green: #476225;
+    --sage-green: #8a9a7b;
+    --olive-accent: #a3b15a;
+    --warm-cream: #f9f7f0;
+    --wood-brown: #a9916c;
+    --dark-oak: #4a3b2b;
+    --soft-white: #ffffff;
+    
+    --font-serif: 'Merriweather', serif;
+    --font-sans: 'Lato', sans-serif;
+    
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Global Styles ===== */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--warm-cream);
+    color: var(--dark-oak);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, .brand-text {
+    font-family: var(--font-serif);
+    color: var(--earth-green);
+    font-weight: 700;
+}
+
+.text-logo {
+color: var(--wood-brown);
+}
+
+/* ===== Navigation ===== */
+.navbar {
+    background-color: var(--soft-white) !important;
+    border-bottom: 3px solid var(--sage-green);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand { font-weight: 900; }
+.nav-link { font-weight: 600; color: var(--dark-oak) !important; }
+.nav-link.active, .nav-link:hover { color: var(--earth-green) !important; }
+
+/* Keep dropdown from collapsing the navbar on mobile */
+@media (max-width: 991px) {
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        background-color: var(--warm-cream); /* Matches your theme */
+        border: none;
+        padding-left: 1.5rem; /* Indent sub-items for clarity */
+    }
+}
+
+/* Optional: Open dropdown on hover for Desktop ONLY */
+@media (min-width: 992px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; 
+    }
+}
+
+/* ===== Search Bar Styling ===== */
+.search-form .input-group {
+    max-width: 250px;
+}
+
+.custom-search-input {
+    border-radius: 20px 0 0 20px !important;
+    border: 1px solid var(--sage-green) !important;
+    background-color: var(--warm-cream) !important;
+    font-size: 0.9rem;
+}
+
+.custom-search-btn {
+    border-radius: 0 20px 20px 0 !important;
+    border: 1px solid var(--sage-green) !important;
+    border-left: none !important;
+    background-color: var(--soft-white) !important;
+    color: var(--earth-green) !important;
+}
+
+.custom-search-btn:hover {
+    background-color: var(--earth-green) !important;
+    color: white !important;
+}
+
+/* On Mobile, make it full width */
+@media (max-width: 991px) {
+    .search-form .input-group {
+        max-width: 100%;
+    }
+}
+
+
+/* ===== Hero Carousel ===== */
+#heroCarousel { height: 600px; }
+.carousel-inner, .carousel-item { height: 100%; }
+.carousel-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); z-index: 2; }
+.carousel-caption { z-index: 3; top: 50%; transform: translateY(-50%); bottom: auto; }
+
+/* Slide Specific Gradients */
+.carousel-item:nth-child(1) .carousel-bg { background: linear-gradient(135deg, rgba(71, 98, 37, 0.9) 0%, rgba(138, 154, 123, 0.8) 100%) !important; }
+.carousel-item:nth-child(2) .carousel-bg { background: linear-gradient(135deg, rgba(74, 59, 43, 0.9) 0%, rgba(107, 124, 89, 0.8) 100%) !important; }
+.carousel-item:nth-child(3) .carousel-bg { background: linear-gradient(135deg, rgba(169, 145, 108, 0.9) 0%, rgba(249, 247, 240, 0.7) 100%) !important; }
+
+.carousel-indicators button {
+    background-color: var(--wood-brown) !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+}
+.carousel-indicators .active { background-color: var(--earth-green) !important; }
+
+/* ===== Cards & Sections (FIXED BADGE POSITIONING) ===== */
+.bg-light { background-color: #f2efe4 !important; }
+
+.card {
+    background-color: var(--soft-white);
+    border: 1px solid #e0ddd5;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.safety-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.card-img-container {
+    height: 220px;
+    width: 100%;
+    position: relative;
+}
+
+.product-image-placeholder, .blog-image-placeholder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.safety-features {
+    background: var(--warm-cream);
+    border-left: 4px solid var(--sage-green);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* ===== Reveal Animation ===== */
+.product-card, .blog-card, .stat-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--sage-green);
+}
+
+/* ===== Buttons ===== */
+.btn { border-radius: 0.5rem; padding: 0.75rem 1.5rem; font-weight: 600; }
+
+.btn-success {
+    background-color: var(--earth-green) !important;
+    border-color: var(--earth-green) !important;
+    color: white !important;
+}
+
+.btn-success:hover {
+    background-color: var(--dark-oak) !important;
+    transform: translateY(-2px);
+}
+
+/* Fix for subtle badges so text is visible */
+.bg-success-subtle { background-color: #d1e7dd !important; color: #0f5132 !important; }
+.bg-primary-subtle { background-color: #cfe2ff !important; color: #084298 !important; }
+.bg-warning-subtle { background-color: #fff3cd !important; color: #664d03 !important; }
+
+/* ===== Icons & Utilities ===== */
+.bi-heart-pulse, .bi-shield-check, .bi-check2-circle { color: var(--sage-green); }
+.bi-award, .bi-info-circle, .bi-clock { color: var(--wood-brown) !important; }
+
+/* ===== Footer ===== */
+.footer {
+    background-color: var(--earth-green) !important;
+    color: var(--warm-cream) !important;
+    border-top: 5px solid var(--wood-brown);
+    padding-top: 4rem;
+}
+
+.footer h5 { color: white !important; }
+.footer a { color: rgba(255, 255, 255, 0.75) !important; text-decoration: none; }
+.footer a:hover { color: white !important; text-decoration: underline !important; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    #heroCarousel { height: 450px; }
+    .carousel-caption h1 { font-size: 1.8rem; }
+    .card-img-container { height: 180px; }
+}
+
+#backToTop {
+    background-color: var(--earth-green) !important;
+    border: none;
+    z-index: 1000;
+}
+/* Ensures the image fills the container without stretching */
+.product-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the magic property for perfect cropping */
+    transition: transform 0.5s ease;
+}
+
+/* Optional: Subtle zoom effect when you hover over the card */
+.card:hover .product-card-img {
+    transform: scale(1.1);
+}
+/* Fix Back to Top Position and Style */
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+    background-color: var(--dark-oak) !important;
+    transform: scale(1.1);
+}
+
+#backToTop i {
+    font-size: 1.5rem;
+    line-height: 0;
+}
+
+/* ===== Mobile Navigation Tweaks ===== */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--soft-white);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-item {
+        border-bottom: 1px solid #f0eee6;
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Styles the hamburger icon color */
+    .navbar-toggler {
+        border-color: var(--sage-green);
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(71, 98, 37, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+@media (max-width: 400px) {
+    .brand-text {
+        font-size: 1rem;
+    }
+    .navbar-brand i {
+        font-size: 1.2rem;
+    }
+}
+/* ===== Contact Section Styles ===== */
+.contact-section {
+    background-color: var(--warm-cream);
+}
+
+.custom-input {
+    border: 2px solid #eee !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.custom-input:focus {
+    border-color: var(--sage-green) !important;
+    box-shadow: 0 0 0 0.25rem rgba(138, 154, 123, 0.15) !important;
+}
+
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Ensure the text color inside the green info box is white */
+.contact-info-box p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info-box .icon-circle i {
+    color: var(--earth-green);
+    }
+</style>
 <body>
   <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
@@ -460,6 +814,258 @@
         <i class="bi bi-arrow-up"></i>
     </button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
+<script src="">
+    // Kitchen Pro - Main JavaScript
+// Enhanced user interactions and features
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ===== Back to Top Button =====
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = 'block';
+            backToTopButton.style.opacity = '1';
+        } else {
+            backToTopButton.style.opacity = '0';
+            setTimeout(() => {
+                if (window.pageYOffset <= 300) {
+                    backToTopButton.style.display = 'none';
+                }
+            }, 300);
+        }
+    });
+    
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // ===== Navbar Scroll Effect =====
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            navbar.classList.add('shadow-lg');
+        } else {
+            navbar.classList.remove('shadow-lg');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+        // ===== Search Form Handler =====
+    const searchForm = document.querySelector('.search-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = this.querySelector('input').value;
+            if (query.trim()) {
+                console.log('Searching for:', query);
+                // Redirect to a search page or filter products
+                // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                alert('Searching for: ' + query + '. (Search results page coming soon!)');
+            }
+        });
+    }
+
+    
+    // ===== Smooth Scroll for Anchor Links =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '#!') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // ===== Card Hover Effects =====
+    const productCards = document.querySelectorAll('.product-card, .blog-card');
+    
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+    });
+    
+    // ===== Carousel Auto-pause on Hover =====
+    const carousel = document.querySelector('#heroCarousel');
+    if (carousel) {
+        const carouselInstance = new bootstrap.Carousel(carousel, {
+            interval: 5000,
+            wrap: true
+        });
+        
+        carousel.addEventListener('mouseenter', function() {
+            carouselInstance.pause();
+        });
+        
+        carousel.addEventListener('mouseleave', function() {
+            carouselInstance.cycle();
+        });
+    }
+    
+    // ===== Form Validation Enhancement =====
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    });
+    
+    // ===== Lazy Loading for Images (when you add real images) =====
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        });
+        
+        // Observe all images with data-src attribute
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // ===== Animate Elements on Scroll =====
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all cards and sections
+    document.querySelectorAll('.product-card, .blog-card, section').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // ===== Dynamic Year in Footer =====
+    const yearElement = document.querySelector('.footer p');
+    if (yearElement && yearElement.textContent.includes('2026')) {
+        const currentYear = new Date().getFullYear();
+        yearElement.textContent = yearElement.textContent.replace('2026', currentYear);
+    }
+    
+    // ===== Newsletter Form Handler =====
+    const newsletterForm = document.querySelector('.newsletter-section form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            if (emailInput.value) {
+                // You can add your email service integration here
+                alert('Thank you for subscribing! We\'ll send you the latest updates.');
+                emailInput.value = '';
+            }
+        });
+    }
+    
+    // ===== Product Card Click Tracking (for analytics) =====
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('btn')) {
+                const productName = this.querySelector('.card-title').textContent;
+                console.log('Product viewed:', productName);
+                // You can add Google Analytics or other tracking here
+            }
+        });
+    });
+    
+    // ===== Mobile Menu Close on Link Click (FIXED) =====
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if this is a dropdown toggle
+            const isDropdown = this.classList.contains('dropdown-toggle');
+            
+            // Only close the menu if:
+            // 1. We are on mobile (< 992px)
+            // 2. The menu is currently open ('show')
+            // 3. It is NOT a dropdown toggle
+            if (window.innerWidth < 992 && 
+                navbarCollapse.classList.contains('show') && 
+                !isDropdown) {
+                
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+
+    
+    // ===== Performance: Defer Non-Critical CSS =====
+    const deferStyles = document.createElement('link');
+    deferStyles.rel = 'stylesheet';
+    deferStyles.href = 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css';
+    document.head.appendChild(deferStyles);
+    
+    // ===== Console Message =====
+    console.log('%c Kitchen Pro Reviews ', 'background: #2563eb; color: white; font-size: 16px; padding: 10px; font-weight: bold;');
+    console.log('Website loaded successfully! 🔥');
+});
+
+// ===== Utility Functions =====
+
+// Debounce function for scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+        }
+</script>
 </body>
 </html>
