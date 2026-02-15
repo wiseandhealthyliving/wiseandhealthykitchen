@@ -9,7 +9,7 @@
     <meta name="description" content="Reviews of the safest stainless steel and PFAS-free air fryers and kitchen appliances. Make your kitchen non-toxic and family-safe.">
     <meta name="keywords" content="air fryer, stainless steel, PFAS-free, non-toxic cookware, BPA-free, kitchen appliances, healthy cooking, family-safe">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://wiseandhealthyliving.github.io/wise-health-life/index.html">
+    <link rel="canonical" href="https://wiseandhealthyliving.github.io/wiseandhealthykitchen/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Wise & Healthy Kitchen - Safe Air Fryers & Appliances">
@@ -137,14 +137,6 @@ color: var(--wood-brown);
         max-width: 100%;
     }
 }
-
-
-/* ===== Hero Carousel ===== */
-#heroCarousel { height: 600px; }
-.carousel-inner, .carousel-item { height: 100%; }
-.carousel-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-.carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); z-index: 2; }
-.carousel-caption { z-index: 3; top: 50%; transform: translateY(-50%); bottom: auto; }
 
 /* Slide Specific Gradients */
 .carousel-item:nth-child(1) .carousel-bg { background: linear-gradient(135deg, rgba(71, 98, 37, 0.9) 0%, rgba(138, 154, 123, 0.8) 100%) !important; }
@@ -274,11 +266,6 @@ color: var(--wood-brown);
     .card-img-container { height: 180px; }
 }
 
-#backToTop {
-    background-color: var(--earth-green) !important;
-    border: none;
-    z-index: 1000;
-}
 /* Ensures the image fills the container without stretching */
 .product-card-img {
     width: 100%;
@@ -293,12 +280,13 @@ color: var(--wood-brown);
 }
 /* Fix Back to Top Position and Style */
 #backToTop {
+    background-color: var(--earth-green) !important;
     display: none; /* Hidden by default */
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 99;
-    border: none;
+    border: 2px solid var(--wood-brown);
     outline: none;
     cursor: pointer;
     padding: 0;
@@ -402,13 +390,10 @@ color: var(--wood-brown);
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#top-air-fryers">Top Air Fryers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#evaluation">How We Evaluate</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#other-appliances">Other Appliances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#our-mission">Our Mission</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#blog">Health Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>            
+                    <li class="nav-item"><a class="nav-link" href="products.html#appliances">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html#air-fryers">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html#contact">Contact</a></li>            
                 </ul>
                 <form class="d-flex ms-lg-3 mt-3 mt-lg-0 search-form" role="search">
                     <div class="input-group">
@@ -450,7 +435,7 @@ color: var(--wood-brown);
         <div class="container">
             <div class="mb-5">
                 <h2 class="section-title display-5 fw-bold mb-3">
-                    <i class="bi bi-check2-circle text-success me-3"></i>BPA-Free Multi-Cookers
+                    <i class="bi bi-check2-circle text-success me-3"></i>BPA-Free Appliances
                 </h2>
                 <p class="text-muted lead">Stainless steel cooking pots. Safe materials throughout.</p>
             </div>
@@ -461,8 +446,8 @@ color: var(--wood-brown);
                     <div class="card product-card h-100 shadow">
                         <div class="product-badge"><span class="badge bg-success">Top Rated</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Pot</span></div>
-                        <div class="card-img-container">
-                       <img src="img/instapot.jpg" class="d-block mx-auto img-fluid" style="width: 100%;" alt="Instant Pot Duo Plus 9-in-1">             
+                        <div class="product-card-img card-img-container">
+                       <img src="img/instapot.jpg" class="d-block mx-auto object-fit img-fluid" style="width: 100%; height: 100%;" alt="Instant Pot Duo Plus 9-in-1">             
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Instant Pot Duo Plus 9-in-1</h5>
@@ -491,7 +476,7 @@ color: var(--wood-brown);
                                     <span class="h4 text-success mb-0"></span>
                                     <small class="text-muted text-decoration-line-through ms-2"></small>
                                 </div>
-                                <a href="https://amzn.to/3MxiVDx" class="btn btn-success" target="_blank">
+                                <a href="https://amzn.to/3MxiVDx" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
                             </div>
@@ -505,7 +490,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-warning">Premium</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> BPA-Free</span></div>
                         <div class="card-img-container">
-                         <img src="img/vitamixe.jpg" class="d-block mx-auto img-fluid" style="width: 100%;" alt="Vitamix E310 Explorian Blender">            
+                         <img src="img/vitamixe.jpg" class="d-block mx-auto object-fit img-fluid" style="width: 100%; height: 100%;" alt="Vitamix E310 Explorian Blender">            
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Vitamix E310 Explorian Blender</h5>
@@ -529,7 +514,7 @@ color: var(--wood-brown);
                             
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h4 text-success mb-0"></span>
-                                <a href="https://amzn.to/4rTvich" class="btn btn-success" target="_blank">
+                                <a href="https://amzn.to/4rTvich" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
                             </div>
@@ -543,7 +528,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-info">Japanese Quality</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Inner</span></div>
                         <div class="card-img-container">
-                        <img src="img/zojirushi.jpg" class="d-block mx-auto img-fluid" style="width: 100%;" alt="Zojirushi Rice Cooker (Stainless)
+                        <img src="img/zojirushi.jpg" class="d-block mx-auto object-fit img-fluid" style="width: 100%;" alt="Zojirushi Rice Cooker (Stainless)
 ">
                 
                         </div>
@@ -570,7 +555,7 @@ color: var(--wood-brown);
                             
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h4 text-success mb-0"></span>
-                                <a href="https://amzn.to/4bQjItH" class="btn btn-success" target="_blank">
+                                <a href="https://amzn.to/4bQjItH" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
                             </div>
@@ -627,7 +612,7 @@ color: var(--wood-brown);
                             
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h4 text-success mb-0"></span>
-                                <a href="https://amzn.to/4cpmpmb" class="btn btn-success" target="_blank">
+                                <a href="https://amzn.to/4cpmpmb" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
                             </div>
@@ -669,7 +654,7 @@ color: var(--wood-brown);
                             
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h4 text-success mb-0"></span>
-                                <a href="https://amzn.to/3ObhDyQ" class="btn btn-success" target="_blank">
+                                <a href="https://amzn.to/3ObhDyQ" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
                             </div>
@@ -711,7 +696,7 @@ color: var(--wood-brown);
                             
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="h4 text-success mb-0"></span>
-                                <a href="https://amzn.to/462PFLL" class="btn btn-success" target="_blank">
+                                <a href="https://amzn.to/462PFLL" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
                             </div>
@@ -747,8 +732,9 @@ color: var(--wood-brown);
 
           <!-- Footer -->
     <footer class="footer text-white pt-5 pb-4">
-        <div class="container text-white">
+        <div class="container text-white">            
             <div class="row g-4">
+                
                 <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold text-white mb-3">
                         <i class="bi bi-heart-pulse text-success me-2"></i>Wise & Healthy Kitchen
@@ -760,18 +746,18 @@ color: var(--wood-brown);
                         <a href="https://www.facebook.com/share/1G47cmus8W/" class="text-white me-3" aria-label="Follow us on Facebook"><i class="bi bi-facebook fs-4"></i></a>
                         <a href="https://www.instagram.com/wiseandhealthykitchen?igsh=MTlvNGNyczV1ajlxdg==" class="text-white me-3" aria-label="Follow us on Instagram"><i class="bi bi-instagram fs-4"></i></a>
                         <a href="https://wa.me/17587235872" class="text-white social-item" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
-                        <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-white social-item" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
+                        <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-white social-item" aria-label="Email"> <i class="bi bi-envelope fs-4"></i></a>
                     </div>
                 </div>                       
 
                 <div class="col-lg-2 col-md-6 text-white">
                     <h5 class="text-white fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="text-white mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="products.html" class="text-muted text-decoration-none">Safe Products</a></li>
-                        <li class="mb-2"><a href="blog.html" class="text-muted text-decoration-none">Health Blog</a></li>
-                        <li class="mb-2"><a href="#our-mission" class="text-muted text-decoration-none">Our Mission</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="text-white mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none">Safe Products</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white-50 text-decoration-none">Health Blog</a></li>
+                        <li class="mb-2"><a href="infex.html#our-mission" class="text-white-50 text-decoration-none">Our Mission</a></li>
+                        <li class="mb-2"><a href="about.html" class="text--white-50 text-decoration-none">About Us</a></li>
                     </ul>
                 </div>
 
@@ -786,26 +772,27 @@ color: var(--wood-brown);
                     </ul>
                 </div>          
                     <div class="col-lg-3 col-md-6" id="contact">
-    <h5 class="fw-bold mb-3 text-white">Contact Us</h5>
-    <ul class="list-unstyled">
-        <li class="mb-2 text-white">
-            <i class="bi bi-envelope me-2"></i> 
-            <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-muted text-decoration-none">Email Support</a>
-        </li>
-    </ul>
-            <hr class="my-4 bg-secondary text-white">
-            <div class="text-white row">
+                      <h5 class="fw-bold mb-3 text-white">Contact Us</h5>
+                        <ul class="list-unstyled">
+                          <li class="mb-2 text-white">
+                          <i class="bi bi-envelope me-2"></i> 
+                          <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-muted text-decoration-none">Email Support</a>
+                          </li>
+                        </ul>
+                          <hr class="my-4 bg-secondary text-white">
+                      <div class="text-white row">
                 <div class="col-md-6 text-center text-white text-md-start">
                     <p class="mb-2 text-muted small">&copy; 2026 Wise & Healthy Kitchen. All rights reserved.</p>
                     <p class="mb-0 text-muted small">As an Amazon Associate, we earn from qualifying purchases.</p>
                 </div>
+                
                 <div class="col-md-6 text-center text-white text-md-end">
-                    <a href="privacy-policy.html" class="text-muted text-decoration-none small me-3">Privacy Policy</a>
-                    <a href="terms-of-service.html" class="text-muted text-decoration-none small me-3">Terms of Service</a>
-                    <a href="affiliate-disclosure.html" class="text-muted text-decoration-none small">Affiliate Disclosure</a>
+                    <a href="privacy-policy.html" class="text-white-50 text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="text-white-50 text-decoration-none small me-3">Terms of Service</a>
+                    <a href="affiliate-disclosure.html" class="text-white-50  text-decoration-none small">Affiliate Disclosure</a>
                 </div>
-            </div>
-            </div>
+                
+            </div>        
         </div>
     </footer>
 
@@ -813,6 +800,7 @@ color: var(--wood-brown);
     <button id="backToTop" class="btn btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" style="display: none; width: 50px; height: 50px;">
         <i class="bi bi-arrow-up"></i>
     </button>
+                
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // Kitchen Pro - Main JavaScript
@@ -979,20 +967,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearElement && yearElement.textContent.includes('2026')) {
         const currentYear = new Date().getFullYear();
         yearElement.textContent = yearElement.textContent.replace('2026', currentYear);
-    }
-    
-    // ===== Newsletter Form Handler =====
-    const newsletterForm = document.querySelector('.newsletter-section form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('input[type="email"]');
-            if (emailInput.value) {
-                // You can add your email service integration here
-                alert('Thank you for subscribing! We\'ll send you the latest updates.');
-                emailInput.value = '';
-            }
-        });
     }
     
     // ===== Product Card Click Tracking (for analytics) =====
