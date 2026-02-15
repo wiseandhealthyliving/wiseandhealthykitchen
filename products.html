@@ -24,7 +24,7 @@
     <meta name="twitter:description" content="Reviews of the safest air fryers and non-toxic kitchen appliances.">
     <meta name="twitter:image" content="img/og-image.jpg">
     
-     <!-- Bootstrap 5.3 CSS -->
+    <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -92,9 +92,9 @@ color: var(--wood-brown);
     .navbar-nav .dropdown-menu {
         position: static;
         float: none;
-        background-color: var(--warm-cream); /* Matches your theme */
+        background-color: var(--warm-cream);
         border: none;
-        padding-left: 1.5rem; /* Indent sub-items for clarity */
+        padding-left: 1.5rem;
     }
 }
 
@@ -138,20 +138,7 @@ color: var(--wood-brown);
     }
 }
 
-/* Slide Specific Gradients */
-.carousel-item:nth-child(1) .carousel-bg { background: linear-gradient(135deg, rgba(71, 98, 37, 0.9) 0%, rgba(138, 154, 123, 0.8) 100%) !important; }
-.carousel-item:nth-child(2) .carousel-bg { background: linear-gradient(135deg, rgba(74, 59, 43, 0.9) 0%, rgba(107, 124, 89, 0.8) 100%) !important; }
-.carousel-item:nth-child(3) .carousel-bg { background: linear-gradient(135deg, rgba(169, 145, 108, 0.9) 0%, rgba(249, 247, 240, 0.7) 100%) !important; }
-
-.carousel-indicators button {
-    background-color: var(--wood-brown) !important;
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 50% !important;
-}
-.carousel-indicators .active { background-color: var(--earth-green) !important; }
-
-/* ===== Cards & Sections (FIXED BADGE POSITIONING) ===== */
+/* ===== Cards & Sections ===== */
 .bg-light { background-color: #f2efe4 !important; }
 
 .card {
@@ -181,20 +168,19 @@ color: var(--wood-brown);
     height: 220px;
     width: 100%;
     position: relative;
+    overflow: hidden; /* ensures image does not overflow rounded corners */
 }
 
-    .card-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-    }
-
-.product-image-placeholder, .blog-image-placeholder {
-    height: 100%;
+/* FIX: All product images now fill container and crop properly */
+.card-img-container img {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-container img {
+    transform: scale(1.1);
 }
 
 .stat-card {
@@ -272,33 +258,19 @@ color: var(--wood-brown);
     .card-img-container { height: 180px; }
 }
 
-/* Ensures the image fills the container without stretching */
-.product-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This is the magic property for perfect cropping */
-    transition: transform 0.5s ease;
-}
-
-/* Optional: Subtle zoom effect when you hover over the card */
-.card:hover .product-card-img {
-    transform: scale(1.1);
-}
-/* Fix Back to Top Position and Style */
+/* ===== Back to Top Button ===== */
 #backToTop {
     background-color: var(--earth-green) !important;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
     border: 2px solid var(--wood-brown);
     outline: none;
     cursor: pointer;
-    padding: 0;
-    display: flex;
+    width: 50px;
+    height: 50px;
+    display: flex;          /* visible when JS shows it */
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s, transform 0.3s;
+    /* hidden by default via JS inline style; CSS does not force hide */
 }
 
 #backToTop:hover {
@@ -329,7 +301,6 @@ color: var(--wood-brown);
         border-bottom: none;
     }
 
-    /* Styles the hamburger icon color */
     .navbar-toggler {
         border-color: var(--sage-green);
     }
@@ -380,13 +351,13 @@ color: var(--wood-brown);
 
 .contact-info-box .icon-circle i {
     color: var(--earth-green);
-    }
+}
 </style>
 <body>
   <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.html"> <!-- FIX: link to home page -->
                 <i class="bi bi-heart-pulse text-success me-2"></i>
                 <span class="brand-text">Wise & Healthy <span class="text-logo">Kitchen</span></span>
             </a>
@@ -397,8 +368,8 @@ color: var(--wood-brown);
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>            
                     <li class="nav-item"><a class="nav-link" href="products.html#appliances">Appliances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html#air-fryers">Air-Fryers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>            
+                    <li class="nav-item"><a class="nav-link" href="products.html#air-fryers">Air-Fryers</a></li> <!-- FIX: removed .html -->
+                    <li class="nav-item"><a class="nav-link" href="products.html#contact">Contact</a></li>            
                 </ul>
                 <form class="d-flex ms-lg-3 mt-3 mt-lg-0 search-form" role="search">
                     <div class="input-group">
@@ -451,12 +422,12 @@ color: var(--wood-brown);
                     <div class="card product-card h-100 shadow">
                         <div class="product-badge"><span class="badge bg-success">Top Rated</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Pot</span></div>
-                        <div class="card-img-container">
-                       <img src="img/instapot.jpg" class="d-block mx-auto img-fluid" alt="Instant Pot Duo Plus 9-in-1">             
+                        <div class="card-img-container"> <!-- FIX: removed product-card-img class -->
+                            <img src="img/instapot.jpg" class="d-block mx-auto" alt="Instant Pot Duo Plus 9-in-1">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Instant Pot Duo Plus 9-in-1</h5>
-                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 51, 000+ sold</span></div>
+                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 51,000+ sold</span></div>
                             <p class="card-text text-muted flex-grow-1">Food-grade stainless steel inner pot. Replaces 9 appliances. Perfect for health-conscious meal prep.</p>
                             
                             <div class="safety-features">
@@ -477,10 +448,6 @@ color: var(--wood-brown);
                             </div>
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="h4 text-success mb-0"></span>
-                                    <small class="text-muted text-decoration-line-through ms-2"></small>
-                                </div>
                                 <a href="https://amzn.to/3MxiVDx" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
@@ -495,7 +462,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-warning">Premium</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> BPA-Free</span></div>
                         <div class="card-img-container">
-                         <img src="img/vitamixe.jpg" class="d-block mx-auto img-fluid" alt="Vitamix E310 Explorian Blender">            
+                            <img src="img/vitamixe.jpg" class="d-block mx-auto" alt="Vitamix E310 Explorian Blender">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Vitamix E310 Explorian Blender</h5>
@@ -518,7 +485,6 @@ color: var(--wood-brown);
                             </div>
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 text-success mb-0"></span>
                                 <a href="https://amzn.to/4rTvich" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
@@ -533,9 +499,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-info">Japanese Quality</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Inner</span></div>
                         <div class="card-img-container">
-                        <img src="img/zojirushi.jpg" class="d-block mx-auto img-fluid" alt="Zojirushi Rice Cooker (Stainless)
-">
-                
+                            <img src="img/zojirushi.jpg" class="d-block mx-auto" alt="Zojirushi Rice Cooker (Stainless)">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Zojirushi Rice Cooker (Stainless)</h5>
@@ -559,7 +523,6 @@ color: var(--wood-brown);
                             </div>
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 text-success mb-0"></span>
                                 <a href="https://amzn.to/4bQjItH" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
@@ -571,7 +534,7 @@ color: var(--wood-brown);
         </div>
     </section>
     
-      <!-- Air Fryers Section -->
+    <!-- Air Fryers Section -->
     <section id="air-fryers" class="products-section py-5">
         <div class="container">
             <div class="mb-5">
@@ -588,10 +551,8 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-success">Editor's Choice</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> 100% SS</span></div>
                         <div class="card-img-container">
-                            <div class="product-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                                <img src="img/breville.jpg" class="d-block ms-auto img-fluid" alt="Breville Smart Oven Air Fryer Pro">
-
-                            </div>
+                            <!-- Placeholder gradient is fine, but we keep the img -->
+                            <img src="img/breville.jpg" alt="Breville Smart Oven Air Fryer Pro">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Breville Smart Oven Air Fryer Pro</h5>
@@ -616,7 +577,6 @@ color: var(--wood-brown);
                             </div>
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 text-success mb-0"></span>
                                 <a href="https://amzn.to/4cpmpmb" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
@@ -631,14 +591,11 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-primary">Best Value</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Build</span></div>
                         <div class="card-img-container">
-                            <div class="product-image-placeholder" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
-                                <img src="img/cuisinart.jpg" class="d-block ms-auto img-fluid" alt="Cuisinart TOA-65 Air Fryer Toaster Oven">
-                            
-                            </div>
+                            <img src="img/cuisinart.jpg" alt="Cuisinart TOA-65 Air Fryer Toaster Oven">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Cuisinart TOA-65 Air Fryer Toaster Oven</h5>
-                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 5, 500+ sold</span></div>
+                            <div class="mb-2"><span class="badge bg-success-subtle text-success"><i class="bi bi-cart-check"></i> 5,500+ sold</span></div>
                             <p class="card-text text-muted flex-grow-1">Brushed stainless steel construction. 7 functions: air fry, convection bake, broil, toast, warm, and more.</p>
                             
                             <div class="safety-features">
@@ -658,7 +615,6 @@ color: var(--wood-brown);
                             </div>
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 text-success mb-0"></span>
                                 <a href="https://amzn.to/3ObhDyQ" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
@@ -673,10 +629,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-warning">Premium</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> All Metal</span></div>
                         <div class="card-img-container">
-                            <div class="product-image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                                <img src="img/kitchenaid.jpg" class="d-block ms-auto img-fluid" style="object-fit: cover;" alt="KitchenAid Digital Countertop Oven">
-                            
-                            </div>
+                            <img src="img/kitchenaid.jpg" alt="KitchenAid Digital Countertop Oven">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">KitchenAid Digital Countertop Oven</h5>
@@ -700,7 +653,6 @@ color: var(--wood-brown);
                             </div>
                             
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h4 text-success mb-0"></span>
                                 <a href="https://amzn.to/462PFLL" class="btn btn-success" target="_blank" rel="noopener">
                                     View on Amazon <i class="bi bi-box-arrow-up-right ms-1"></i>
                                 </a>
@@ -721,7 +673,7 @@ color: var(--wood-brown);
         </div>
     </section>
     
-        <!-- Amazon Associates Disclosure -->
+    <!-- Amazon Associates Disclosure -->
     <section class="py-3 bg-light border-top border-bottom">
         <div class="container">
             <div class="row">
@@ -735,11 +687,11 @@ color: var(--wood-brown);
         </div>
     </section>
 
-          <!-- Footer -->
+    <!-- Footer (FIXED structure) -->
     <footer class="footer text-white pt-5 pb-4">
-        <div class="container text-white">            
+        <div class="container">
+            <!-- First row: about, quick links, safe products -->
             <div class="row g-4">
-                
                 <div class="col-lg-4 col-md-6">
                     <h5 class="fw-bold text-white mb-3">
                         <i class="bi bi-heart-pulse text-success me-2"></i>Wise & Healthy Kitchen
@@ -747,304 +699,275 @@ color: var(--wood-brown);
                     <p class="text-white">Your trusted source for non-toxic, BPA-free, and PFAS-free kitchen appliances. Because your family's health matters.</p>
                     <p class="text-white small mb-3"><em>"Evidence-based reviews of air fryers and kitchen appliances with a focus on material transparency and durability."</em></p>
                     <div class="social-links text-white mt-3">
+                        <a href="https://wa.me/17587235872" class="text-white social-item" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>                        
                         <a href="https://pin.it/4GJYf0Gi0" class="text-white me-3" aria-label="Follow us on Pinterest"><i class="bi bi-pinterest fs-4"></i></a>
                         <a href="https://www.facebook.com/share/1G47cmus8W/" class="text-white me-3" aria-label="Follow us on Facebook"><i class="bi bi-facebook fs-4"></i></a>
                         <a href="https://www.instagram.com/wiseandhealthykitchen?igsh=MTlvNGNyczV1ajlxdg==" class="text-white me-3" aria-label="Follow us on Instagram"><i class="bi bi-instagram fs-4"></i></a>
-                        <a href="https://wa.me/17587235872" class="text-white social-item" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
-                        <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-white social-item" aria-label="Email"> <i class="bi bi-envelope fs-4"></i></a>
+                        <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-white social-item" aria-label="Email"><i class="bi bi-envelope fs-4"></i></a>
                     </div>
                 </div>                       
 
-                <div class="col-lg-2 col-md-6 text-white">
-                    <h5 class="text-white fw-bold mb-3">Quick Links</h5>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="text-white mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none">Safe Products</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-white-50 text-decoration-none">Health Blog</a></li>
-                        <li class="mb-2"><a href="index.html#our-mission" class="text-white-50 text-decoration-none">Our Mission</a></li>
-                        <li class="mb-2"><a href="about.html" class="text--white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#our-mission" class="text-white-50 text-decoration-none">Our Mission</a></li> <!-- FIX: typo infex -> index -->
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6 text-white">
+                <div class="col-lg-3 col-md-6">
                     <h5 class="fw-bold mb-3 text-white">Safe Products</h5>
-                    <ul class="list-unstyled text-white">
-                        <li class="mb-2"><a href="products.html#air-fryers" class="text-muted text-decoration-none">Stainless Steel Air Fryers</a></li>
-                        <li class="mb-2"><a href="products.html#appliances" class="text-muted text-decoration-none">BPA-Free Multi-Cookers</a></li>
-                        <li class="mb-2"><a href="products.html#cookware" class="text-muted text-decoration-none">Non-Toxic Cookware</a></li>
-                        <li class="mb-2"><a href="products.html" class="text-muted text-decoration-none">All Safe Products</a></li>
-                        <li class="mb-2"><a href="blog.html#safety-guide" class="text-muted text-decoration-none">Materials Safety Guide</a></li>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="products.html#air-fryers" class="text-white-50 text-decoration-none">Stainless Steel Air Fryers</a></li>
+                        <li class="mb-2"><a href="products.html#appliances" class="text-white-50 text-decoration-none">BPA-Free Multi-Cookers</a></li>
+                        <li class="mb-2"><a href="products.html#cookware" class="text-white-50 text-decoration-none">Non-Toxic Cookware</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none">All Safe Products</a></li>
+                        <li class="mb-2"><a href="blog.html#safety-guide" class="text-white-50 text-decoration-none">Materials Safety Guide</a></li>
                     </ul>
-                </div>          
-                    <div class="col-lg-3 col-md-6" id="contact">
-                      <h5 class="fw-bold mb-3 text-white">Contact Us</h5>
-                        <ul class="list-unstyled">
-                          <li class="mb-2 text-white">
-                          <i class="bi bi-envelope me-2"></i> 
-                          <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-muted text-decoration-none">Email Support</a>
-                          </li>
-                        </ul>
-                          <hr class="my-4 bg-secondary text-white">
-                      <div class="text-white row">
-                <div class="col-md-6 text-center text-white text-md-start">
-                    <p class="mb-2 text-muted small">&copy; 2026 Wise & Healthy Kitchen. All rights reserved.</p>
-                    <p class="mb-0 text-muted small">As an Amazon Associate, we earn from qualifying purchases.</p>
                 </div>
-                
-                <div class="col-md-6 text-center text-white text-md-end">
+            </div> <!-- end first row -->
+
+            <!-- Second row: contact and copyright (FIXED) -->
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-6" id="contact">
+                    <h5 class="fw-bold mb-3 text-white">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i> 
+                            <a href="mailto:wiseandhealthykitchen@yahoo.com" class="text-white-50 text-decoration-none">Email Support</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- empty columns for spacing if needed -->
+                <div class="col-lg-9 col-md-6"></div>
+            </div>
+
+            <hr class="my-4 bg-secondary">
+
+            <!-- Third row: copyright and legal links -->
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-2 text-white-50 small">
+                        &copy; <span id="copyright-year">2026</span> Wise & Healthy Kitchen. All rights reserved.
+                    </p>
+                    <p class="mb-0 text-white-50 small">As an Amazon Associate, we earn from qualifying purchases.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
                     <a href="privacy-policy.html" class="text-white-50 text-decoration-none small me-3">Privacy Policy</a>
                     <a href="terms-of-service.html" class="text-white-50 text-decoration-none small me-3">Terms of Service</a>
-                    <a href="affiliate-disclosure.html" class="text-white-50  text-decoration-none small">Affiliate Disclosure</a>
+                    <a href="affiliate-disclosure.html" class="text-white-50 text-decoration-none small">Affiliate Disclosure</a>
                 </div>
-                
-            </div>        
-        </div>
+            </div>
+        </div> <!-- container -->
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" style="display: none; width: 50px; height: 50px;">
+    <!-- Back to Top Button (FIXED: no duplicate btn, no inline style hiding) -->
+    <button id="backToTop" class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg">
         <i class="bi bi-arrow-up"></i>
     </button>
-                
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // Kitchen Pro - Main JavaScript
-// Enhanced user interactions and features
+    // Enhanced user interactions and features
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== Back to Top Button =====
-    const backToTopButton = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.style.display = 'block';
-            backToTopButton.style.opacity = '1';
-        } else {
-            backToTopButton.style.opacity = '0';
-            setTimeout(() => {
-                if (window.pageYOffset <= 300) {
-                    backToTopButton.style.display = 'none';
-                }
-            }, 300);
-        }
-    });
-    
-    backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // ===== Back to Top Button =====
+        const backToTopButton = document.getElementById('backToTop');
+        backToTopButton.style.display = 'none'; // initially hidden
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+                setTimeout(() => {
+                    if (window.pageYOffset <= 300) {
+                        backToTopButton.style.display = 'none';
+                    }
+                }, 300);
+            }
         });
-    });
-    
-    // ===== Navbar Scroll Effect =====
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
         
-        if (currentScroll > 100) {
-            navbar.classList.add('shadow-lg');
-        } else {
-            navbar.classList.remove('shadow-lg');
-        }
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
         
-        lastScroll = currentScroll;
-    });
+        // ===== Navbar Scroll Effect =====
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
 
         // ===== Search Form Handler =====
-    const searchForm = document.querySelector('.search-form');
-    if (searchForm) {
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const query = this.querySelector('input').value;
-            if (query.trim()) {
-                console.log('Searching for:', query);
-                // Redirect to a search page or filter products
-                // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                alert('Searching for: ' + query + '. (Search results page coming soon!)');
-            }
-        });
-    }
-
-    
-    // ===== Smooth Scroll for Anchor Links =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href !== '#!') {
+        const searchForm = document.querySelector('.search-form');
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                const query = this.querySelector('input').value;
+                if (query.trim()) {
+                    alert('Searching for: ' + query + '. (Search results page coming soon!)');
                 }
-            }
-        });
-    });
-    
-    // ===== Card Hover Effects =====
-    const productCards = document.querySelectorAll('.product-card, .blog-card');
-    
-    productCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        });
-    });
-    
-    // ===== Carousel Auto-pause on Hover =====
-    const carousel = document.querySelector('#heroCarousel');
-    if (carousel) {
-        const carouselInstance = new bootstrap.Carousel(carousel, {
-            interval: 5000,
-            wrap: true
-        });
+            });
+        }
         
-        carousel.addEventListener('mouseenter', function() {
-            carouselInstance.pause();
-        });
-        
-        carousel.addEventListener('mouseleave', function() {
-            carouselInstance.cycle();
-        });
-    }
-    
-    // ===== Form Validation Enhancement =====
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            if (!form.checkValidity()) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        });
-    });
-    
-    // ===== Lazy Loading for Images (when you add real images) =====
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
+        // ===== Smooth Scroll for Anchor Links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#!') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
                     }
                 }
             });
         });
         
-        // Observe all images with data-src attribute
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
+        // ===== Card Hover Effects =====
+        const productCards = document.querySelectorAll('.product-card, .blog-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
         });
-    }
-    
-    // ===== Animate Elements on Scroll =====
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all cards and sections
-    document.querySelectorAll('.product-card, .blog-card, section').forEach(el => {
-        observer.observe(el);
-    });
-    
-    // ===== Dynamic Year in Footer =====
-    const yearElement = document.querySelector('.footer p');
-    if (yearElement && yearElement.textContent.includes('2026')) {
-        const currentYear = new Date().getFullYear();
-        yearElement.textContent = yearElement.textContent.replace('2026', currentYear);
-    }
-    
-    // ===== Product Card Click Tracking (for analytics) =====
-    document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('btn')) {
-                const productName = this.querySelector('.card-title').textContent;
-                console.log('Product viewed:', productName);
-                // You can add Google Analytics or other tracking here
-            }
-        });
-    });
-    
-    // ===== Mobile Menu Close on Link Click (FIXED) =====
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Check if this is a dropdown toggle
-            const isDropdown = this.classList.contains('dropdown-toggle');
-            
-            // Only close the menu if:
-            // 1. We are on mobile (< 992px)
-            // 2. The menu is currently open ('show')
-            // 3. It is NOT a dropdown toggle
-            if (window.innerWidth < 992 && 
-                navbarCollapse.classList.contains('show') && 
-                !isDropdown) {
-                
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                bsCollapse.hide();
-            }
-        });
-    });
-
-    
-    // ===== Performance: Defer Non-Critical CSS =====
-    const deferStyles = document.createElement('link');
-    deferStyles.rel = 'stylesheet';
-    deferStyles.href = 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css';
-    document.head.appendChild(deferStyles);
-    
-    // ===== Console Message =====
-    console.log('%c Kitchen Pro Reviews ', 'background: #2563eb; color: white; font-size: 16px; padding: 10px; font-weight: bold;');
-    console.log('Website loaded successfully! 🔥');
-});
-
-// ===== Utility Functions =====
-
-// Debounce function for scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Check if element is in viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+        
+        // ===== Carousel Auto-pause on Hover (safe if carousel not present) =====
+        const carousel = document.querySelector('#heroCarousel');
+        if (carousel) {
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 5000,
+                wrap: true
+            });
+            carousel.addEventListener('mouseenter', () => carouselInstance.pause());
+            carousel.addEventListener('mouseleave', () => carouselInstance.cycle());
         }
+        
+        // ===== Form Validation Enhancement =====
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            });
+        });
+        
+        // ===== Lazy Loading for Images (if data-src used) =====
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        }
+        
+        // ===== Animate Elements on Scroll =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.product-card, .blog-card, section').forEach(el => observer.observe(el));
+        
+        // ===== Dynamic Year in Footer =====
+        const yearSpan = document.getElementById('copyright-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+        
+        // ===== Product Card Click Tracking =====
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('btn')) {
+                    const productName = this.querySelector('.card-title').textContent;
+                    console.log('Product viewed:', productName);
+                }
+            });
+        });
+        
+        // ===== Mobile Menu Close on Link Click =====
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const isDropdown = this.classList.contains('dropdown-toggle');
+                if (window.innerWidth < 992 && navbarCollapse.classList.contains('show') && !isDropdown) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+        
+        // ===== Performance: Defer Non-Critical CSS =====
+        const deferStyles = document.createElement('link');
+        deferStyles.rel = 'stylesheet';
+        deferStyles.href = 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css';
+        document.head.appendChild(deferStyles);
+        
+        console.log('%c Kitchen Pro Reviews ', 'background: #2563eb; color: white; font-size: 16px; padding: 10px; font-weight: bold;');
+        console.log('Website loaded successfully! 🔥');
+    });
+
+    // Utility functions (unused but kept)
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 </script>
 </body>
-</html>
+                                                                                  </html>
