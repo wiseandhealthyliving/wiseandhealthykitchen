@@ -183,6 +183,12 @@ color: var(--wood-brown);
     position: relative;
 }
 
+    .card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+    }
+
 .product-image-placeholder, .blog-image-placeholder {
     height: 100%;
     width: 100%;
@@ -281,7 +287,6 @@ color: var(--wood-brown);
 /* Fix Back to Top Position and Style */
 #backToTop {
     background-color: var(--earth-green) !important;
-    display: none; /* Hidden by default */
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -381,7 +386,7 @@ color: var(--wood-brown);
   <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#hero">
+            <a class="navbar-brand" href="index.html">
                 <i class="bi bi-heart-pulse text-success me-2"></i>
                 <span class="brand-text">Wise & Healthy <span class="text-logo">Kitchen</span></span>
             </a>
@@ -392,8 +397,8 @@ color: var(--wood-brown);
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>            
                     <li class="nav-item"><a class="nav-link" href="products.html#appliances">Appliances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html#air-fryers.html">Air-Fryers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html#contact">Contact</a></li>            
+                    <li class="nav-item"><a class="nav-link" href="products.html#air-fryers">Air-Fryers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>            
                 </ul>
                 <form class="d-flex ms-lg-3 mt-3 mt-lg-0 search-form" role="search">
                     <div class="input-group">
@@ -446,8 +451,8 @@ color: var(--wood-brown);
                     <div class="card product-card h-100 shadow">
                         <div class="product-badge"><span class="badge bg-success">Top Rated</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Pot</span></div>
-                        <div class="product-card-img card-img-container">
-                       <img src="img/instapot.jpg" class="d-block mx-auto object-fit img-fluid" style="width: 100%; height: 100%;" alt="Instant Pot Duo Plus 9-in-1">             
+                        <div class="card-img-container">
+                       <img src="img/instapot.jpg" class="d-block mx-auto img-fluid" alt="Instant Pot Duo Plus 9-in-1">             
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Instant Pot Duo Plus 9-in-1</h5>
@@ -490,7 +495,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-warning">Premium</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> BPA-Free</span></div>
                         <div class="card-img-container">
-                         <img src="img/vitamixe.jpg" class="d-block mx-auto object-fit img-fluid" style="width: 100%; height: auto;" alt="Vitamix E310 Explorian Blender">            
+                         <img src="img/vitamixe.jpg" class="d-block mx-auto img-fluid" alt="Vitamix E310 Explorian Blender">            
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Vitamix E310 Explorian Blender</h5>
@@ -528,7 +533,7 @@ color: var(--wood-brown);
                         <div class="product-badge"><span class="badge bg-info">Japanese Quality</span></div>
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Inner</span></div>
                         <div class="card-img-container">
-                        <img src="img/zojirushi.jpg" class="d-block mx-auto object-fit img-fluid" style="width: 100%;" alt="Zojirushi Rice Cooker (Stainless)
+                        <img src="img/zojirushi.jpg" class="d-block mx-auto img-fluid" alt="Zojirushi Rice Cooker (Stainless)
 ">
                 
                         </div>
@@ -584,7 +589,7 @@ color: var(--wood-brown);
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> 100% SS</span></div>
                         <div class="card-img-container">
                             <div class="product-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                                <img src="img/breville.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Breville Smart Oven Air Fryer Pro">
+                                <img src="img/breville.jpg" class="d-block ms-auto img-fluid" alt="Breville Smart Oven Air Fryer Pro">
 
                             </div>
                         </div>
@@ -627,7 +632,7 @@ color: var(--wood-brown);
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> SS Build</span></div>
                         <div class="card-img-container">
                             <div class="product-image-placeholder" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
-                                <img src="img/cuisinart.jpg" class="w-100 h-100" style="object-fit: cover;" alt="Cuisinart TOA-65 Air Fryer Toaster Oven">
+                                <img src="img/cuisinart.jpg" class="d-block ms-auto img-fluid" alt="Cuisinart TOA-65 Air Fryer Toaster Oven">
                             
                             </div>
                         </div>
@@ -669,7 +674,7 @@ color: var(--wood-brown);
                         <div class="safety-badge"><span class="badge bg-info"><i class="bi bi-shield-check"></i> All Metal</span></div>
                         <div class="card-img-container">
                             <div class="product-image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                                <img src="img/kitchenaid.jpg" class="w-100 h-100" style="object-fit: cover;" alt="KitchenAid Digital Countertop Oven">
+                                <img src="img/kitchenaid.jpg" class="d-block ms-auto img-fluid" style="object-fit: cover;" alt="KitchenAid Digital Countertop Oven">
                             
                             </div>
                         </div>
@@ -756,7 +761,7 @@ color: var(--wood-brown);
                         <li class="text-white mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none">Safe Products</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-white-50 text-decoration-none">Health Blog</a></li>
-                        <li class="mb-2"><a href="infex.html#our-mission" class="text-white-50 text-decoration-none">Our Mission</a></li>
+                        <li class="mb-2"><a href="index.html#our-mission" class="text-white-50 text-decoration-none">Our Mission</a></li>
                         <li class="mb-2"><a href="about.html" class="text--white-50 text-decoration-none">About Us</a></li>
                     </ul>
                 </div>
@@ -797,7 +802,7 @@ color: var(--wood-brown);
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" class="btn btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" style="display: none; width: 50px; height: 50px;">
+    <button id="backToTop" class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" style="display: none; width: 50px; height: 50px;">
         <i class="bi bi-arrow-up"></i>
     </button>
                 
