@@ -358,3 +358,6 @@ color: var(--wood-brown);
     color: var(--earth-green);
 }
 
+.blog-preview {
+   display: block;
+}
