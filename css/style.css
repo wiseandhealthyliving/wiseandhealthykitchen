@@ -185,6 +185,11 @@ color: var(--wood-brown);
     transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+.reveal.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 .reveal {
     opacity: 1 !important;
     transform: translateY(0) !important;
