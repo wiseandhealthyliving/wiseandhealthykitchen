@@ -28,38 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== Navbar Scroll Effect =====
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.classList.add('shadow-lg');
-        } else {
-            navbar.classList.remove('shadow-lg');
-        }
-        
-        lastScroll = currentScroll;
-    });
-
-        // ===== Search Form Handler =====
-    const searchForm = document.querySelector('.search-form');
-    if (searchForm) {
-        searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const query = this.querySelector('input').value;
-            if (query.trim()) {
-                console.log('Searching for:', query);
-                // Redirect to a search page or filter products
-                // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                alert('Searching for: ' + query + '. (Search results page coming soon!)');
-            }
-        });
-    }
-
-    
     // ===== Smooth Scroll for Anchor Links =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
