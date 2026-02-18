@@ -178,7 +178,7 @@ color: var(--wood-brown);
     border-radius: 0.5rem;
 }
 
-/* ===== Reveal Animation ===== */
+/* ===== Reveal Animation =====
 .product-card, .blog-card, .stat-card {
     opacity: 0;
     transform: translateY(30px);
@@ -200,6 +200,7 @@ color: var(--wood-brown);
     box-shadow: var(--shadow-lg);
     border-color: var(--sage-green);
 }
+*/
 
 /* ===== Buttons ===== */
 .btn { border-radius: 0.5rem; padding: 0.75rem 1.5rem; font-weight: 600; }
