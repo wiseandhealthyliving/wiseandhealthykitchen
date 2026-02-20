@@ -680,10 +680,7 @@
         <button id="submit-button" type="submit" class="btn btn-light btn-lg px-4">Subscribe Free</button>
     </div>
 </form>
-
-<div id="form-status" class="mt-3 fw-bold"></div>
-
-                
+<div id="form-status" class="mt-3"></div>           
                 <p class="small mt-3 mb-0">Join our list of health-conscious families. No spam, ever.</p>
             </div>
         </div>
@@ -812,6 +809,35 @@ async function handleSubmit(event) {
     }).catch(error => {
         status.innerHTML = "Oops! There was a problem connecting to the server.";
     });
+
+
+    // Inside your handleSubmit function:
+fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+}).then(response => {
+    if (response.ok) {
+        // SUCCESS: Show a light alert that looks great against the green background
+        status.innerHTML = `
+            <div class="alert alert-light border-0 shadow-sm animate__animated animate__fadeIn" role="alert">
+                <i class="bi bi-check-circle-fill me-2 text-success"></i> 
+                <strong>Success!</strong> Check your inbox for your first guide.
+            </div>`;
+        form.reset();
+        form.style.display = "none"; // Optional: Hide the form fields after success
+    } else {
+        // ERROR: Show a warning alert
+        status.innerHTML = `
+            <div class="alert alert-warning" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> 
+                Oops! Please check your email address and try again.
+            </div>`;
+    }
+}).catch(error => {
+    status.innerHTML = `<div class="alert alert-danger text-white bg-danger border-0">Connection error. Please try again later.</div>`;
+});
+
 }
 
 form.addEventListener("submit", handleSubmit);
